@@ -1,21 +1,37 @@
-import {getCatalog,asset,pageUrl} from '../api.js';
-const hero=document.querySelector('.home-hero');
-const image=hero.querySelector('img');const title=hero.querySelector('h1');const subtitle=hero.querySelector('.hero-subtitle');const link=hero.querySelector('.hero-caption a');const dots=[...hero.querySelectorAll('[data-slide]')];
-let current=0;let paused=matchMedia('(prefers-reduced-motion: reduce)').matches;let timer;
-const toggle=hero.querySelector('[data-slide-pause]');
-try {
-  const {slides}=await getCatalog();
-  function show(index) {
-    current=(index+slides.length)%slides.length;const slide=slides[current];
-    image.src=asset(slide.image);image.alt=slide.title;title.textContent=slide.title;subtitle.textContent=slide.subtitle;
-    link.href=pageUrl(slide.category==='chairs-barstools'?'products-chairs':'products',slide.category==='chairs-barstools'?'':`?category=${slide.category}`);
-    dots.forEach((dot,i)=>{dot.setAttribute('aria-pressed',String(i===current));});
-    hero.querySelector('[data-slide-number]').textContent=String(current+1).padStart(2,'0');
+// A small manual slideshow. Nothing changes until a button is clicked.
+var slides = [
+  { image: './assets/images/index/slide-0.jpg', title: 'Ayabi Chair', description: 'Design: Dai Sugasawa.' },
+  { image: './assets/images/index/slide-1.jpg', title: 'Amorin Table', description: 'Design: Wolfgang C. R. Mezger.' },
+  { image: './assets/images/index/slide-2.jpg', title: 'Molamisa Sofa', description: 'Design: EOOS.' }
+];
+var slideIndex = 0;
+
+function showSlide() {
+  document.getElementById('bannerImage').src = slides[slideIndex].image;
+  document.getElementById('bannerImage').alt = slides[slideIndex].title;
+  document.getElementById('bannerTitle').textContent = slides[slideIndex].title;
+  document.getElementById('bannerDescription').textContent = slides[slideIndex].description;
+  document.getElementById('slideNumber').textContent = (slideIndex + 1) + ' / 3';
+}
+
+document.getElementById('nextSlide').addEventListener('click', function () {
+  slideIndex = slideIndex + 1;
+  if (slideIndex === slides.length) {
+    slideIndex = 0;
   }
-  function schedule() {clearInterval(timer);if(!paused&&!document.hidden)timer=setInterval(()=>show(current+1),6000);}
-  function pauseLabel() {toggle.setAttribute('aria-label',paused?'Play slideshow':'Pause slideshow');toggle.textContent=paused?'▶':'Ⅱ';}
-  dots.forEach(dot=>dot.addEventListener('click',()=>{show(Number(dot.dataset.slide));schedule();}));
-  hero.querySelector('[data-slide-next]').addEventListener('click',()=>{show(current+1);schedule();});
-  toggle.addEventListener('click',()=>{paused=!paused;pauseLabel();schedule();});
-  document.addEventListener('visibilitychange',schedule);pauseLabel();schedule();
-} catch(error) {console.error(error.message);}
+  showSlide();
+});
+
+document.getElementById('previousSlide').addEventListener('click', function () {
+  slideIndex = slideIndex - 1;
+  if (slideIndex < 0) {
+    slideIndex = slides.length - 1;
+  }
+  showSlide();
+});
+
+document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  document.querySelector('#newsletterForm .form-status').textContent = 'Practice complete. No subscription was sent and your email was not saved.';
+  document.getElementById('newsletterForm').reset();
+});

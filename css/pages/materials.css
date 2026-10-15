@@ -1,3 +1,23 @@
-/* C: material thumbnails and local previews. */
-.material-intro{text-align:center;max-width:880px;margin-inline:auto}.material-intro .lead{margin:30px auto 0}.material-grid{gap:64px 40px}.material-open{display:block;width:100%;text-align:left;padding:0}.material-open h3{display:flex;justify-content:space-between;align-items:center;gap:18px}.material-arrow{font-family:var(--sans);font-size:22px;letter-spacing:0}.material-card p{color:var(--muted);font-size:15px;margin-top:18px}.material-card:hover .image-frame img{transform:scale(1.06)}.material-preview{aspect-ratio:3/2;object-fit:cover;margin-bottom:28px}.material-faq{max-width:1000px;margin-inline:auto}.material-faq h2{margin-bottom:34px}.material-faq details{border-top:1px solid var(--line);padding:20px 0}.material-faq details:last-child{border-bottom:1px solid var(--line)}.material-faq summary{cursor:pointer;font-size:18px}.material-faq details p{margin-top:20px;max-width:760px}.material-faq details .arrow-link{margin-top:18px}
-@media(max-width:859px){.material-grid{gap:44px 30px}.material-hero img{min-height:360px}.material-hero h1{font-size:52px}}@media(max-width:599px){.material-grid{gap:40px}.material-intro{max-width:calc(100% - 40px)}.material-hero .hero-caption{bottom:34px}.material-hero h1{font-size:45px}}
+.material-intro-image {
+  width: 100%;
+  max-width: 600px;
+  height: 240px;
+  object-fit: cover;
+}
+
+.material-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+#faq details {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+#faq summary {
+  cursor: pointer;
+  font-weight: bold;
+}

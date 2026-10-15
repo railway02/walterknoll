@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent educational recreation of Walter Knoll — Professionals.">
-  <title>Professionals | Walter Knoll — Frontend Study</title>
+  <title>Professionals | Walter Knoll Study</title>
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
@@ -14,82 +13,82 @@
 <body data-page="professionals">
 <!-- shared:header:start -->
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
-  <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="menuDialog" aria-expanded="false" data-open="menuDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/></svg></button>
-  <a class="logo" href="../index.html" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25"></a>
+<header class="site-header">
+  <a href="../index.html" class="logo">
+    <img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25">
+  </a>
   <nav class="primary-nav" aria-label="Main navigation">
+    <a href="../index.html" data-nav="index">Home</a>
     <a href="../pages/products.html" data-nav="products">Products</a>
-    <a href="../pages/materials.html" data-nav="materials">Material Library</a>
+    <a href="../pages/materials.html" data-nav="materials">Materials</a>
     <a href="../pages/magazine.html" data-nav="magazine">Magazine</a>
-    <a href="../pages/about.html#designers" data-nav="designers">Designers</a>
     <a href="../pages/professionals.html" data-nav="professionals">Professionals</a>
     <a href="../pages/about.html" data-nav="about">About us</a>
     <a href="../pages/sustainability.html" data-nav="sustainability">Sustainability</a>
+    <a href="../pages/contact.html" data-nav="contact">Contact</a>
   </nav>
-  <div class="header-tools">
-    <button class="icon-button" type="button" aria-label="Search" data-open="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></button>
-    <button class="icon-button" type="button" aria-label="Wish list" data-open="wishlistDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg><span class="wish-count" hidden></span></button>
-    <a class="utility-link" href="../pages/contact.html#retailers">Retailers</a>
-    <a class="utility-link" href="../pages/professionals.html#downloads">Downloads</a>
-    <a class="utility-link" href="../pages/contact.html#contact">Contact</a>
-    <a class="icon-button mobile-contact" href="../pages/contact.html" aria-label="Retailers and contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
-    <span class="language" title="English">EN</span>
-  </div>
 </header>
-<dialog class="menu-dialog" id="menuDialog" aria-labelledby="menuTitle">
-  <div class="dialog-top"><span id="menuTitle">Explore Walter Knoll</span><button class="icon-button" type="button" aria-label="Close menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <nav class="drawer-nav" aria-label="Mobile navigation">
-    <a href="../pages/products.html">Products <span>→</span></a>
-    <a href="../pages/materials.html">Material Library <span>→</span></a>
-    <a href="../pages/magazine.html">Magazine <span>→</span></a>
-    <a href="../pages/about.html#designers">Designers <span>→</span></a>
-    <a href="../pages/professionals.html">Professionals <span>→</span></a>
-    <a href="../pages/about.html">About us <span>→</span></a>
-    <a href="../pages/sustainability.html">Sustainability <span>→</span></a>
-    <a href="../pages/contact.html#retailers">Retailers <span>→</span></a>
-    <a href="../pages/professionals.html#downloads">Downloads <span>→</span></a>
-    <a href="../pages/contact.html#contact">Contact <span>→</span></a>
-  </nav>
-</dialog>
-<dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-  <div class="dialog-top"><h2 id="searchTitle">Find your inspiration.</h2><button class="icon-button" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <label class="search-field"><span class="sr-only">Search products, materials and stories</span><input id="siteSearch" type="search" placeholder="Search products, materials and stories…" autocomplete="off"></label>
-  <p class="small muted" id="searchSummary" role="status">Explore the collection or enter a search term.</p>
-  <div id="searchResults" class="search-results"></div>
-</dialog>
-<dialog class="content-dialog" id="wishlistDialog" aria-labelledby="wishlistTitle">
-  <div class="dialog-top"><h2 id="wishlistTitle">Your wish list.</h2><button class="icon-button" type="button" aria-label="Close wish list" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <div id="wishlistContent"></div>
-</dialog>
-<dialog class="content-dialog" id="detailDialog" aria-labelledby="detailTitle"><button class="icon-button detail-close" type="button" aria-label="Close detail" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detailContent"></div></dialog>
 
 <!-- shared:header:end -->
 <main id="main">
-<section class="page-head container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">For Professionals</span></nav><h1>For Professionals</h1><p class="lead">Ideas, materials and resources for your next project. Find support for architecture and interior design.</p></section><section class="container section professional-hero"><img class="" src="../assets/images/professionals/projects.jpg" alt="Walter Knoll furniture in an architectural project" loading="lazy"></section><section class="container section"><div class="four-column service-grid"><a class="service-card" href="#downloads"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg><h3>Downloads</h3><p>Project and material study guides.</p><span aria-hidden="true">→</span></a><a class="service-card" href="magazine.html?category=References"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14"/><path d="M8 7V3h8v4M3 12h18"/></svg><h3>Projects</h3><p>Explore furniture in architectural spaces.</p><span aria-hidden="true">→</span></a><a class="service-card" href="#campus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-6 10 6-10 6ZM6 12v6l6 3 6-3v-6"/></svg><h3>Campus of Competence</h3><p>Learn about planning and design.</p><span aria-hidden="true">→</span></a><a class="service-card" href="contact.html#retailers"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M9 21v-7h6v7"/></svg><h3>Showrooms</h3><p>Experience the collection in person.</p><span aria-hidden="true">→</span></a><a class="service-card" href="https://www.walterknoll.info/en/professionals/press"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h8M8 11h8M8 15h5"/></svg><h3>Press</h3><p>Official press information and resources.</p><span aria-hidden="true">→</span></a><a class="service-card" href="contact.html#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3Zm0 0 9 8 9-8"/></svg><h3>Contact</h3><p>Find the right contact for your project.</p><span aria-hidden="true">→</span></a><a class="service-card" href="#tools"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7Zm0 10v10M3 7l9 5 9-5"/></svg><h3>pCon Tools</h3><p>Explore professional planning tools.</p><span aria-hidden="true">→</span></a><a class="service-card" href="#content-kits"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><h3>Content Kits</h3><p>Find official design resources.</p><span aria-hidden="true">→</span></a></div></section><section class="container section" id="downloads"><div class="section-head"><h2>Downloads</h2><span class="small muted">Resources for this frontend study</span></div><div class="resource-list"><a class="resource-row" href="../assets/downloads/project-guide.txt" download><div><h3>Project guide</h3><p class="small muted">Page structure, local setup and team responsibilities · TXT</p></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg></a><a class="resource-row" href="../assets/downloads/materials-guide.txt" download><div><h3>Material notes</h3><p class="small muted">Leather palette and material reference links · TXT</p></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg></a><a class="resource-row" href="../assets/downloads/care-guide.txt" download><div><h3>Care reference</h3><p class="small muted">Links to official care and material information · TXT</p></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg></a></div><p class="small muted section-copy">These are study documents. For official CAD data, brochures and product specifications, visit <a class="arrow-link" href="https://www.walterknoll.info/en/professionals/downloads">Official downloads <span aria-hidden="true">→</span></a>.</p></section><section class="container section two-column professional-notes"><article id="campus"><p class="eyebrow">Campus of Competence</p><h2>A place to learn.</h2><p class="section-copy">Explore the official program for professionals and designers.</p><p class="section-copy"><a class="arrow-link" href="https://www.walterknoll.info/en/lp/campus-of-competence">Explore the campus <span aria-hidden="true">→</span></a></p></article><article id="tools"><p class="eyebrow">Planning tools</p><h2>Bring your ideas<br>into the room.</h2><p class="section-copy">Find official resources for specification and space planning.</p><p class="section-copy"><a class="arrow-link" href="https://www.walterknoll.info/en/professionals/pcon">Explore pCon Tools <span aria-hidden="true">→</span></a></p><p class="section-copy" id="content-kits"><a class="arrow-link" href="https://www.walterknoll.info/en/lp/content-kits">Official Content Kits <span aria-hidden="true">→</span></a></p></article></section>
+  <section class="page-head">
+    <p class="breadcrumbs"><a href="../index.html">Home</a> / Professionals</p>
+    <h1>For Professionals</h1>
+    <p>Useful links for architecture and furniture projects.</p>
+    <img class="professional-image" src="../assets/images/professionals/projects.jpg" alt="Furniture in an architectural project">
+  </section>
+
+  <section class="section">
+    <h2>Services</h2>
+    <ol class="service-list">
+      <li><a href="#downloads">Downloads</a> — study notes and official product resources.</li>
+      <li><a href="magazine.html?category=References">Projects</a> — furniture used in different spaces.</li>
+      <li><a href="#campus">Campus of Competence</a> — learning and events for professionals.</li>
+      <li><a href="contact.html#retailers">Showrooms</a> — find a place to see the furniture.</li>
+      <li><a href="https://www.walterknoll.info/en/professionals/press">Press</a> — official press information.</li>
+      <li><a href="contact.html#contact">Contact</a> — contact information and a form exercise.</li>
+      <li><a href="#tools">pCon Tools</a> — planning resources.</li>
+      <li><a href="https://www.walterknoll.info/en/lp/content-kits">Content Kits</a> — official design resources.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="downloads">
+    <h2>Downloads</h2>
+    <p>These three text files were written for this learning project.</p>
+    <ul>
+      <li><a href="../assets/downloads/project-guide.txt" download>Project guide (TXT)</a></li>
+      <li><a href="../assets/downloads/materials-guide.txt" download>Material notes (TXT)</a></li>
+      <li><a href="../assets/downloads/care-guide.txt" download>Care reference (TXT)</a></li>
+    </ul>
+    <p>For CAD data, brochures and specifications, use <a href="https://www.walterknoll.info/en/professionals/downloads">official downloads</a>.</p>
+  </section>
+
+  <section class="section" id="campus">
+    <h2>Campus of Competence</h2>
+    <p>Learn more about the program on the <a href="https://www.walterknoll.info/en/lp/campus-of-competence">official campus page</a>.</p>
+  </section>
+
+  <section class="section" id="tools">
+    <h2>pCon Tools</h2>
+    <p>Planning tools can help arrange furniture in a room. Find details on the <a href="https://www.walterknoll.info/en/professionals/pcon">official pCon page</a>.</p>
+  </section>
 </main>
 <!-- shared:footer:start -->
 <footer class="site-footer">
-  <div class="container">
-    <a href="../index.html" class="footer-logo" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25" loading="lazy"></a>
-    <div class="footer-grid">
-      <div><h3>Products</h3><ul><li><a href="../pages/products-chairs.html">Chairs &amp; Barstools</a></li><li><a href="../pages/products.html?category=lounge-chairs">Lounge Chairs</a></li><li><a href="../pages/products.html?category=sofas-benches">Sofas &amp; Benches</a></li><li><a href="../pages/products.html?category=tables">Tables</a></li><li><a href="../pages/products.html?category=executive-desks">Executive Desks</a></li><li><a href="../pages/products.html">All Products</a></li></ul></div>
-      <div><h3>Material Library</h3><ul><li><a href="../pages/materials.html#inspiration">Inspiration</a></li><li><a href="../pages/materials-leathers.html">Leathers</a></li><li><a href="../pages/materials.html#fabrics">Fabrics</a></li><li><a href="../pages/materials.html#woods">Woods</a></li><li><a href="../pages/materials.html#stones">Stones</a></li><li><a href="../pages/materials.html#faq">FAQ</a></li></ul></div>
-      <div><h3>About us</h3><ul><li><a href="../pages/about.html#purpose">Our Purpose</a></li><li><a href="../pages/about.html#history">Our History</a></li><li><a href="../pages/about.html#designers">Our Designers</a></li><li><a href="../pages/contact.html#retailers">Showrooms</a></li><li><a href="../pages/sustainability.html">Sustainability</a></li></ul></div>
-      <div><h3>Professionals</h3><ul><li><a href="../pages/professionals.html#downloads">Downloads</a></li><li><a href="../pages/magazine.html?category=References">Projects</a></li><li><a href="../pages/professionals.html#campus">Campus of Competence</a></li><li><a href="../pages/professionals.html#tools">pCon Tools</a></li><li><a href="../pages/contact.html#contact">Contact</a></li></ul></div>
-      <div><h3>Magazine</h3><ul><li><a href="../pages/magazine.html">All Topics</a></li><li><a href="../pages/magazine.html?category=News">News</a></li><li><a href="../pages/magazine.html?category=Stories">Stories</a></li><li><a href="../pages/magazine.html?category=References">References</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>© Walter Knoll · Frontend study</p><p>Independent educational recreation. Images and brand belong to Walter Knoll.</p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Visit the original ↗</a><button class="text-button" type="button" data-top>Back to top ↑</button></div>
-  </div>
+  <p>Walter Knoll · Frontend study</p>
+  <p>
+    <a href="../pages/products-chairs.html">Chairs &amp; Barstools</a> |
+    <a href="../pages/materials-leathers.html">Leathers</a> |
+    <a href="../pages/about.html#designers">Designers</a> |
+    <a href="../pages/contact.html#retailers">Showrooms</a> |
+    <a href="../pages/professionals.html#downloads">Downloads</a>
+  </p>
+  <p class="muted">Educational practice. Images and brand belong to Walter Knoll.</p>
+  <p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Original website</a></p>
+  <button type="button" id="backToTop">Back to top</button>
 </footer>
-<dialog class="content-dialog newsletter-dialog" id="newsletterDialog" aria-labelledby="newsletterTitle">
-  <div class="dialog-top"><h2 id="newsletterTitle">Stay inspired.</h2><button class="icon-button" type="button" aria-label="Close newsletter" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <p>Discover design, materials and new perspectives.</p>
-  <form id="newsletterForm"><label>Email address<input type="email" name="email" autocomplete="email" required placeholder="Your email address"></label><label class="checkbox-field"><input type="checkbox" required> I understand this is a local demonstration.</label><button class="button" type="submit">Subscribe <span>→</span></button><p class="form-status" role="status"></p></form>
-  <p class="small muted">Study demo: your address is not sent or saved. Visit the original website for the official newsletter.</p>
-</dialog>
-<div class="toast" role="status" hidden></div>
 
 <!-- shared:footer:end -->
-<script type="module" src="../js/common.js"></script>
+<script src="../js/common.js" defer></script>
 </body>
 </html>

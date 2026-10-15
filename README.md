@@ -1,84 +1,60 @@
-# Walter Knoll · Frontend Study
+# Walter Knoll 静态网页练习
 
-按 [Walter Knoll 英文官网](https://www.walterknoll.info/en) 与用户提供的十页分工表完成的响应式教学复刻。采用 **原生 HTML、CSS、JavaScript**，保留指定目录结构，旧 `runoob-ui-lab` 项目不受影响。
+这是一个用 **HTML、CSS 和少量 JavaScript** 写的十页家具网站练习。当前是入门版：普通导航、居中内容、简单边框卡片，不再追求官网级的排版与交互。
 
-详细的项目介绍、A 至 E 成员职责、页面功能、代码入口和验收方法见 [项目说明](docs/project-overview.md)。
+![首页预览](docs/previews/home-desktop.jpg)
 
-![Desktop homepage](docs/previews/home-desktop.jpg)
+## 打开网页
 
-## 启动
+下载仓库后，直接双击 `index.html` 就能浏览。页面内容和图片都在本地，不需要安装依赖、启动后端或构建。
 
-```bash
-npm install
-npm run dev
-```
+也可以在仓库目录运行 `npm run dev`，然后打开 `http://localhost:4173`。这个命令只启动一个本地静态文件服务。
 
-打开 **http://localhost:4173**。运行时没有框架、构建工具或第三方 API；图片、产品与材料数据都在本地。服务器只使用 Node 标准库；安装的 Playwright 用于开发验证。
+## 十个页面
 
-如需其他端口：`PORT=8080 npm run dev`。请通过 HTTP 服务打开，浏览器的 `file://` 模式不支持本项目的 ES modules 与 JSON 请求。
-
-## 十个页面与分工
-
-| 分工 | 页面 | 内容 |
+| 分工 | 文件 | 保留的练习 |
 | --- | --- | --- |
-| A | `index.html` | 六张 Hero 轮播、产品推荐、Magazine、Worldwide/About、订阅演示 |
-| A | `pages/about.html` | Purpose、历史时间轴、设计师、门店入口 |
-| B | `pages/products.html` | 分类图片、分类/设计师/关键词筛选、加载更多、产品预览 |
-| B | `pages/products-chairs.html` | 35 款座椅、9 款/页、分页与筛选 |
-| C | `pages/materials.html` | 九个材料入口、悬停效果、材料预览、FAQ |
-| C | `pages/materials-leathers.html` | Elen 大图、材料说明、15 款真实纹理色卡 |
-| D | `pages/magazine.html` | All Topics / News / Stories / References、文章列表与预览 |
-| D | `pages/professionals.html` | 八项服务、可下载的项目参考文件、官方资源入口 |
-| E | `pages/sustainability.html` | 来源明确的统计、图文、原则与 Evo Concept |
-| E | `pages/contact.html` | 六个门店、城市搜索、地图链接、联系表单演示 |
+| A | `index.html`、`pages/about.html` | 三张图片手动切换、产品和文章入口、品牌介绍、订阅表单演示 |
+| B | `pages/products.html`、`pages/products-chairs.html` | 12 张产品卡片分类、12 款椅子两页切换 |
+| C | `pages/materials.html`、`pages/materials-leathers.html` | 九类材料、FAQ 展开、15 张皮革色卡切换 |
+| D | `pages/magazine.html`、`pages/professionals.html` | 九篇文章分类、八项服务、学习文件下载 |
+| E | `pages/sustainability.html`、`pages/contact.html` | 简单图文、六家门店筛选、联系表单演示 |
 
-共享功能包括移动端菜单、跨页面搜索、产品心愿单、键盘操作、回到顶部。心愿单保存在当前浏览器；联系与订阅表单只验证输入并显示演示结果，不发送或保存个人信息。
+表单只在当前页面显示提示，不发送邮件或创建订阅。产品信息和文章全文通过链接访问原官网。
 
-产品索引有 60 条分类记录（59 个不同产品，Management-X 跨分类）；总览展示十个目前官网返回的产品分类。杂志保留九篇有官方来源的文章入口。产品与文章弹窗提供简介入口，完整产品规格和文章在原官网查看。
+## 从哪里改
 
-## 文件组织
+- 文字、产品、文章、门店：直接改对应 HTML，不用先读数据接口。
+- 基本字体和颜色：`css/base.css`。
+- 页面宽度、导航、布局：`css/layout.css`。
+- 卡片、按钮、表单：`css/components.css`。
+- 某一页的样式：`css/pages/` 下对应文件。
+- 简单交互：`js/pages/` 下对应文件。使用普通 `defer` 脚本和事件监听。
+- 公共导航和页脚：改 `js/components/header.html`、`footer.html`，再运行 `npm run sync:components`。
 
-```text
-index.html                 首页
-pages/                     九个内页
-css/base.css               变量、重置、字体
-css/layout.css             导航、页脚、网格、响应式
-css/components.css         卡片、筛选、表单、弹窗
-css/pages/                 每页专属样式
-js/components/             公共导航与页脚的源片段
-js/common.js               搜索、菜单、心愿单、公共弹窗
-js/api.js                  本地数据读取与卡片输出
-js/pages/                  页面交互
-assets/data/catalog.json   产品、文章、材料、门店、轮播索引
-assets/images/             本地图片，按模块分类
-assets/downloads/          可下载的教学参考文件
-scripts/                   启动、公共片段同步、检查、截图
-```
+导航和页脚已经写进每页 HTML，浏览时不依赖同步脚本。`assets/data/catalog.json` 是旧版资料索引，保留供查找素材，当前页面不读取它。
 
-修改导航或页脚后运行：
+## 版本控制
+
+- 完整改动前版本：`81f3d46`，另有 `backup/polished-20261015` 分支保留。
+- 入门版在 `beginner-static-20261015` 分支开发，分开提交页面、检查和说明。
+- 默认分支由 PR 合并后再更新；不强制推送、不重写旧提交。
+
+可以用 `git log --oneline` 查看历史，用 `git diff main...beginner-static-20261015` 对比两版。旧版功能及文档仍可从旧提交查看。
+
+## 开发检查（可选）
+
+浏览网页不需要这些依赖。修改后需要自动检查时再运行：
 
 ```bash
-npm run sync:components
-```
-
-它把片段同步到十页，保留每页正确的资源前缀。导航和页脚在 HTML 中直接可见，不依赖运行时组件请求。
-
-## 检查与截图
-
-```bash
+npm ci
 npm run check
 npx playwright install chromium
 npm test
 ```
 
-- `check`：十页数量、共享片段一致性、内部链接、锚点、图片与 JavaScript 语法。
-- `test`：自动启动独立测试服务器，检查十页桌面/手机布局和主要交互；完成后自动停止测试服务器。
-- 报告与完整截图在 `artifacts/verification/`，不把临时测试产物加入 Git。
-- `npm run capture:reference`：采集指定官网页面截图与字体/尺寸观察，保存到 `artifacts/reference/`。
-- GitHub Actions 自动执行检查与浏览器测试，并上传测试报告。
+`check` 检查十页、链接、图片、公共片段和脚本语法。浏览器测试检查本地直接打开的页面和基础交互，截图与结果写在 `artifacts/verification/`。实际执行结果见 [验证记录](docs/VERIFICATION.md)。
 
-实际执行结果见 [验证记录](docs/VERIFICATION.md)。开发方法、资料取舍见 [工程说明](docs/ENGINEERING.md)，素材来源见 [参考记录](docs/references/README.md)。
+[项目说明与分工](docs/project-overview.md) · [本轮范围](docs/SPEC.md) · [素材来源](docs/references/README.md)
 
-## 使用范围
-
-这是独立教学练习，品牌、产品照片和材料纹理属于原权利人；不代表 Walter Knoll 官方服务，不用于商业经营。下载文件为本项目编写的学习资料。商业字体用 Georgia 与系统无衬线字体替代，因此字体字形、部分排版与原站存在差异。本轮交付 GitHub 源码，尚未发布公开访问的网站。
+这是独立教学练习。品牌、图片和纹理属于原权利人，不代表 Walter Knoll 官方网站。

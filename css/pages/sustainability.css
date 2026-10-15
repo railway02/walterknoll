@@ -1,3 +1,4 @@
-/* E: sourced facts and lifecycle sections. */
-.sustainability-intro{text-align:center;margin-bottom:70px}.sustainability-intro h2{font-size:64px}.stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}.stat-number{font:72px/1.2 var(--serif);letter-spacing:-.06em}.stat h3{font:500 16px var(--sans);letter-spacing:0;margin-top:15px}.stat p{font-size:14px;max-width:300px;margin:16px 0}.evo-banner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;background:var(--soft);padding:40px}.evo-banner img{aspect-ratio:1.4;object-fit:cover}.evo-banner h2{font-size:45px}
-@media(max-width:859px){.sustainability-intro h2{font-size:50px}.stat-number{font-size:60px}.evo-banner{gap:30px;padding:28px}.evo-banner h2{font-size:34px}}@media(max-width:599px){.sustainability-intro h2{font-size:40px}.stats-grid{grid-template-columns:1fr;padding:0;border-bottom:0;gap:0}.stat{padding:28px 0;border-bottom:1px solid var(--line)}.stat-number{font-size:58px}.evo-banner{grid-template-columns:1fr;padding:20px}.evo-banner h2{font-size:34px}}
+.sustainability-image {
+  width: 100%;
+  max-width: 600px;
+}

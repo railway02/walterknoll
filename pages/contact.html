@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent educational recreation of Walter Knoll — Retailers &amp; Contact.">
-  <title>Retailers &amp; Contact | Walter Knoll — Frontend Study</title>
+  <title>Contact | Walter Knoll Study</title>
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
@@ -14,83 +13,132 @@
 <body data-page="contact">
 <!-- shared:header:start -->
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
-  <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="menuDialog" aria-expanded="false" data-open="menuDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/></svg></button>
-  <a class="logo" href="../index.html" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25"></a>
+<header class="site-header">
+  <a href="../index.html" class="logo">
+    <img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25">
+  </a>
   <nav class="primary-nav" aria-label="Main navigation">
+    <a href="../index.html" data-nav="index">Home</a>
     <a href="../pages/products.html" data-nav="products">Products</a>
-    <a href="../pages/materials.html" data-nav="materials">Material Library</a>
+    <a href="../pages/materials.html" data-nav="materials">Materials</a>
     <a href="../pages/magazine.html" data-nav="magazine">Magazine</a>
-    <a href="../pages/about.html#designers" data-nav="designers">Designers</a>
     <a href="../pages/professionals.html" data-nav="professionals">Professionals</a>
     <a href="../pages/about.html" data-nav="about">About us</a>
     <a href="../pages/sustainability.html" data-nav="sustainability">Sustainability</a>
+    <a href="../pages/contact.html" data-nav="contact">Contact</a>
   </nav>
-  <div class="header-tools">
-    <button class="icon-button" type="button" aria-label="Search" data-open="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></button>
-    <button class="icon-button" type="button" aria-label="Wish list" data-open="wishlistDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg><span class="wish-count" hidden></span></button>
-    <a class="utility-link" href="../pages/contact.html#retailers">Retailers</a>
-    <a class="utility-link" href="../pages/professionals.html#downloads">Downloads</a>
-    <a class="utility-link" href="../pages/contact.html#contact">Contact</a>
-    <a class="icon-button mobile-contact" href="../pages/contact.html" aria-label="Retailers and contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
-    <span class="language" title="English">EN</span>
-  </div>
 </header>
-<dialog class="menu-dialog" id="menuDialog" aria-labelledby="menuTitle">
-  <div class="dialog-top"><span id="menuTitle">Explore Walter Knoll</span><button class="icon-button" type="button" aria-label="Close menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <nav class="drawer-nav" aria-label="Mobile navigation">
-    <a href="../pages/products.html">Products <span>→</span></a>
-    <a href="../pages/materials.html">Material Library <span>→</span></a>
-    <a href="../pages/magazine.html">Magazine <span>→</span></a>
-    <a href="../pages/about.html#designers">Designers <span>→</span></a>
-    <a href="../pages/professionals.html">Professionals <span>→</span></a>
-    <a href="../pages/about.html">About us <span>→</span></a>
-    <a href="../pages/sustainability.html">Sustainability <span>→</span></a>
-    <a href="../pages/contact.html#retailers">Retailers <span>→</span></a>
-    <a href="../pages/professionals.html#downloads">Downloads <span>→</span></a>
-    <a href="../pages/contact.html#contact">Contact <span>→</span></a>
-  </nav>
-</dialog>
-<dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-  <div class="dialog-top"><h2 id="searchTitle">Find your inspiration.</h2><button class="icon-button" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <label class="search-field"><span class="sr-only">Search products, materials and stories</span><input id="siteSearch" type="search" placeholder="Search products, materials and stories…" autocomplete="off"></label>
-  <p class="small muted" id="searchSummary" role="status">Explore the collection or enter a search term.</p>
-  <div id="searchResults" class="search-results"></div>
-</dialog>
-<dialog class="content-dialog" id="wishlistDialog" aria-labelledby="wishlistTitle">
-  <div class="dialog-top"><h2 id="wishlistTitle">Your wish list.</h2><button class="icon-button" type="button" aria-label="Close wish list" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <div id="wishlistContent"></div>
-</dialog>
-<dialog class="content-dialog" id="detailDialog" aria-labelledby="detailTitle"><button class="icon-button detail-close" type="button" aria-label="Close detail" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detailContent"></div></dialog>
 
 <!-- shared:header:end -->
 <main id="main">
-<section class="page-head container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Retailers &amp; Contact</span></nav><h1>Retailers &amp; Contact</h1><p class="lead">Experience the collection in person, find your nearest brand space or get in touch about a project.</p></section><section class="container section contact-intro"><img class="" src="../assets/images/contact/headquarters.jpg" alt="Walter Knoll headquarters and showroom in Herrenberg" loading="lazy"><div><p class="eyebrow">Walter Knoll Headquarters</p><h2>Welcome to<br>Herrenberg.</h2><p class="section-copy">Bahnhofstrasse 25<br>71083 Herrenberg, Germany</p><p><a href="tel:+4970322080">+49 7032 208-0</a></p><a class="arrow-link" href="#contact">Get in touch <span aria-hidden="true">→</span></a></div></section><section class="container section" id="retailers"><div class="section-head"><h2>Find a showroom</h2><span class="small muted" id="storeCount" role="status">6 showrooms</span></div><label class="store-search"><span class="sr-only">Search showroom city or address</span><input type="search" id="storeSearch" placeholder="Search a city or address…" autocomplete="off"></label><div class="three-column store-grid"><article class="store-card"><p class="eyebrow">Brand Space</p><h3>Herrenberg</h3><p>Walter Knoll Headquarters</p><address>Bahnhofstrasse 25<br>71083 Herrenberg</address><p class="store-phone"><a href="tel:+4970322080">+49 7032 208-0</a></p><a class="arrow-link" href="https://www.google.com/maps/search/?api=1&query=48.591,8.868" target="_blank" rel="noopener">View on map <span>↗</span></a></article><article class="store-card"><p class="eyebrow">Brand Space</p><h3>New York City</h3><p>Walter K. Inc</p><address>1140 Broadway Suite 504<br>10001 New York City</address><p class="store-phone"><a href="tel:+19179723470">+1 917 972 3470</a></p><a class="arrow-link" href="https://www.google.com/maps/search/?api=1&query=40.7439,-73.988677" target="_blank" rel="noopener">View on map <span>↗</span></a></article><article class="store-card"><p class="eyebrow">Brand Space</p><h3>London</h3><p>Walter Knoll AG &amp; Co. KG Showroom London</p><address>Charterhouse Square 42<br>EC1M 6EA London</address><p class="store-phone"><a href="tel:+442077965950">+44 2077 965950</a></p><a class="arrow-link" href="https://www.google.com/maps/search/?api=1&query=51.52043944266277,-0.09881339985660995" target="_blank" rel="noopener">View on map <span>↗</span></a></article><article class="store-card"><p class="eyebrow">Brand Space</p><h3>Berlin</h3><p>Walter Knoll AG &amp; Co. KG Showroom Berlin</p><address>Einsteinufer 63a<br>10587 Berlin</address><p class="store-phone"><span class="muted">Contact details on the original website</span></p><a class="arrow-link" href="https://www.google.com/maps/search/?api=1&query=52.51818168491928,13.320866945547154" target="_blank" rel="noopener">View on map <span>↗</span></a></article><article class="store-card"><p class="eyebrow">Brand Space</p><h3>Kuala Lumpur</h3><p>Walter Knoll AG &amp; Co. KG Showroom Kuala Lumpur</p><address>A1-6-1,, Arcoris Business Suites,, Jalan Kiara, Mont Kiara<br>50480 Kuala Lumpur</address><p class="store-phone"><a href="tel:+60122360386">+60 12 2360386</a></p><a class="arrow-link" href="https://www.google.com/maps/search/?api=1&query=3.16588,101.65279" target="_blank" rel="noopener">View on map <span>↗</span></a></article><article class="store-card"><p class="eyebrow">Brand Space</p><h3>Wallisellen</h3><p>Walter Knoll AG Showroom Zürich</p><address>Industriestrasse 39b<br>8304 Wallisellen</address><p class="store-phone"><a href="tel:+41417286712">+41 41 728 67 12</a></p><a class="arrow-link" href="https://www.google.com/maps/search/?api=1&query=47.411548,8.589169" target="_blank" rel="noopener">View on map <span>↗</span></a></article></div><p class="empty-state" id="storeEmpty" hidden>No showrooms match your search. Try another city.</p><p class="small muted section-copy">Selected official brand spaces. See the <a class="text-button" href="https://www.walterknoll.info/en/store" target="_blank" rel="noopener">original retailer finder</a> for current details.</p></section><section class="container section contact-section" id="contact"><div class="contact-copy"><p class="eyebrow">Let’s start a conversation</p><h2>How can we<br>help you?</h2><p class="section-copy">A project, a material question or a visit to a showroom. Find the official team using the link below.</p><p class="section-copy"><a class="arrow-link" href="https://www.walterknoll.info/en/professionals/contact">Official contact <span aria-hidden="true">→</span></a></p><p class="small muted section-copy">This form is a local study demonstration. It validates your input; messages are not sent or saved.</p></div><form id="contactForm"><div class="two-column form-row"><label>Your name<input type="text" name="name" autocomplete="name" required placeholder="Full name"></label><label>Email address<input type="email" name="email" autocomplete="email" required placeholder="you@example.com"></label></div><label>Subject<select name="subject"><option>General enquiry</option><option>Project support</option><option>Materials and samples</option><option>Showroom visit</option></select></label><label>Your message<textarea name="message" required placeholder="Tell us a little about your enquiry…"></textarea></label><label class="checkbox-field"><input type="checkbox" required> I understand this is a study demo and no message will be sent.</label><button class="button" type="submit">Submit demo enquiry <span>→</span></button><p class="form-status" role="status"></p></form></section>
+  <section class="page-head">
+    <p class="breadcrumbs"><a href="../index.html">Home</a> / Contact</p>
+    <h1>Retailers &amp; Contact</h1>
+    <p>Find a showroom or try the contact form below.</p>
+    <img class="contact-image" src="../assets/images/contact/headquarters.jpg" alt="Walter Knoll headquarters in Herrenberg">
+  </section>
+
+  <section class="section" id="retailers">
+    <h2>Find a showroom</h2>
+    <label for="storeSearch">Search by city or address</label>
+    <input type="search" id="storeSearch" placeholder="For example: London">
+    <p id="storeCount" role="status">6 showrooms</p>
+    <div class="card-grid">
+      <article class="card store-card">
+        <h3>Herrenberg</h3>
+        <p>Walter Knoll Headquarters</p>
+        <address>Bahnhofstrasse 25<br>71083 Herrenberg, Germany</address>
+        <p><a href="tel:+4970322080">+49 7032 208-0</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=48.591,8.868" target="_blank" rel="noopener">View on map</a></p>
+      </article>
+      <article class="card store-card">
+        <h3>New York City</h3>
+        <p>Walter K. Inc</p>
+        <address>1140 Broadway Suite 504<br>10001 New York City, USA</address>
+        <p><a href="tel:+19179723470">+1 917 972 3470</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=40.7439,-73.988677" target="_blank" rel="noopener">View on map</a></p>
+      </article>
+      <article class="card store-card">
+        <h3>London</h3>
+        <p>Walter Knoll Showroom London</p>
+        <address>42 Charterhouse Square<br>EC1M 6EA London, UK</address>
+        <p><a href="tel:+442077965950">+44 2077 965950</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=51.52043944266277,-0.09881339985660995" target="_blank" rel="noopener">View on map</a></p>
+      </article>
+      <article class="card store-card">
+        <h3>Berlin</h3>
+        <p>Walter Knoll Showroom Berlin</p>
+        <address>Einsteinufer 63a<br>10587 Berlin, Germany</address>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=52.51818168491928,13.320866945547154" target="_blank" rel="noopener">View on map</a></p>
+      </article>
+      <article class="card store-card">
+        <h3>Kuala Lumpur</h3>
+        <p>Walter Knoll Showroom Kuala Lumpur</p>
+        <address>A1-6-1, Arcoris Business Suites, Jalan Kiara, Mont Kiara<br>50480 Kuala Lumpur, Malaysia</address>
+        <p><a href="tel:+60122360386">+60 12 2360386</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=3.16588,101.65279" target="_blank" rel="noopener">View on map</a></p>
+      </article>
+      <article class="card store-card">
+        <h3>Wallisellen</h3>
+        <p>Walter Knoll Showroom Zürich</p>
+        <address>Industriestrasse 39b<br>8304 Wallisellen, Switzerland</address>
+        <p><a href="tel:+41417286712">+41 41 728 67 12</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=47.411548,8.589169" target="_blank" rel="noopener">View on map</a></p>
+      </article>
+    </div>
+    <p id="storeEmpty" hidden>No showrooms found. Try another city.</p>
+    <p class="muted">Selected locations from the <a href="https://www.walterknoll.info/en/store">official retailer finder</a>. Check that page for current details.</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact form</h2>
+    <p>This is a local form exercise. Nothing is sent or saved.</p>
+    <p>To contact the company, use the <a href="https://www.walterknoll.info/en/professionals/contact">official contact page</a>.</p>
+    <form id="contactForm">
+      <p>
+        <label for="contactName">Your name</label>
+        <input id="contactName" name="name" type="text" autocomplete="name" required>
+      </p>
+      <p>
+        <label for="contactEmail">Email address</label>
+        <input id="contactEmail" name="email" type="email" autocomplete="email" required>
+      </p>
+      <p>
+        <label for="contactSubject">Subject</label>
+        <select id="contactSubject" name="subject">
+          <option>General enquiry</option>
+          <option>Project support</option>
+          <option>Materials and samples</option>
+          <option>Showroom visit</option>
+        </select>
+      </p>
+      <p>
+        <label for="contactMessage">Your message</label>
+        <textarea id="contactMessage" name="message" rows="5" required></textarea>
+      </p>
+      <p><label><input type="checkbox" required> I understand this form does not send a message.</label></p>
+      <button type="submit">Check form</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </section>
 </main>
 <!-- shared:footer:start -->
 <footer class="site-footer">
-  <div class="container">
-    <a href="../index.html" class="footer-logo" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25" loading="lazy"></a>
-    <div class="footer-grid">
-      <div><h3>Products</h3><ul><li><a href="../pages/products-chairs.html">Chairs &amp; Barstools</a></li><li><a href="../pages/products.html?category=lounge-chairs">Lounge Chairs</a></li><li><a href="../pages/products.html?category=sofas-benches">Sofas &amp; Benches</a></li><li><a href="../pages/products.html?category=tables">Tables</a></li><li><a href="../pages/products.html?category=executive-desks">Executive Desks</a></li><li><a href="../pages/products.html">All Products</a></li></ul></div>
-      <div><h3>Material Library</h3><ul><li><a href="../pages/materials.html#inspiration">Inspiration</a></li><li><a href="../pages/materials-leathers.html">Leathers</a></li><li><a href="../pages/materials.html#fabrics">Fabrics</a></li><li><a href="../pages/materials.html#woods">Woods</a></li><li><a href="../pages/materials.html#stones">Stones</a></li><li><a href="../pages/materials.html#faq">FAQ</a></li></ul></div>
-      <div><h3>About us</h3><ul><li><a href="../pages/about.html#purpose">Our Purpose</a></li><li><a href="../pages/about.html#history">Our History</a></li><li><a href="../pages/about.html#designers">Our Designers</a></li><li><a href="../pages/contact.html#retailers">Showrooms</a></li><li><a href="../pages/sustainability.html">Sustainability</a></li></ul></div>
-      <div><h3>Professionals</h3><ul><li><a href="../pages/professionals.html#downloads">Downloads</a></li><li><a href="../pages/magazine.html?category=References">Projects</a></li><li><a href="../pages/professionals.html#campus">Campus of Competence</a></li><li><a href="../pages/professionals.html#tools">pCon Tools</a></li><li><a href="../pages/contact.html#contact">Contact</a></li></ul></div>
-      <div><h3>Magazine</h3><ul><li><a href="../pages/magazine.html">All Topics</a></li><li><a href="../pages/magazine.html?category=News">News</a></li><li><a href="../pages/magazine.html?category=Stories">Stories</a></li><li><a href="../pages/magazine.html?category=References">References</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>© Walter Knoll · Frontend study</p><p>Independent educational recreation. Images and brand belong to Walter Knoll.</p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Visit the original ↗</a><button class="text-button" type="button" data-top>Back to top ↑</button></div>
-  </div>
+  <p>Walter Knoll · Frontend study</p>
+  <p>
+    <a href="../pages/products-chairs.html">Chairs &amp; Barstools</a> |
+    <a href="../pages/materials-leathers.html">Leathers</a> |
+    <a href="../pages/about.html#designers">Designers</a> |
+    <a href="../pages/contact.html#retailers">Showrooms</a> |
+    <a href="../pages/professionals.html#downloads">Downloads</a>
+  </p>
+  <p class="muted">Educational practice. Images and brand belong to Walter Knoll.</p>
+  <p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Original website</a></p>
+  <button type="button" id="backToTop">Back to top</button>
 </footer>
-<dialog class="content-dialog newsletter-dialog" id="newsletterDialog" aria-labelledby="newsletterTitle">
-  <div class="dialog-top"><h2 id="newsletterTitle">Stay inspired.</h2><button class="icon-button" type="button" aria-label="Close newsletter" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <p>Discover design, materials and new perspectives.</p>
-  <form id="newsletterForm"><label>Email address<input type="email" name="email" autocomplete="email" required placeholder="Your email address"></label><label class="checkbox-field"><input type="checkbox" required> I understand this is a local demonstration.</label><button class="button" type="submit">Subscribe <span>→</span></button><p class="form-status" role="status"></p></form>
-  <p class="small muted">Study demo: your address is not sent or saved. Visit the original website for the official newsletter.</p>
-</dialog>
-<div class="toast" role="status" hidden></div>
 
 <!-- shared:footer:end -->
-<script type="module" src="../js/common.js"></script>
-<script type="module" src="../js/pages/contact.js"></script>
+<script src="../js/common.js" defer></script>
+<script src="../js/pages/contact.js" defer></script>
 </body>
 </html>

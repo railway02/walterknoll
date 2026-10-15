@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent educational recreation of Walter Knoll — Leathers.">
-  <title>Leathers | Walter Knoll — Frontend Study</title>
+  <meta name="description" content="Walter Knoll furniture website study: Leathers.">
+  <title>Leathers | Walter Knoll Study</title>
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
@@ -14,83 +14,139 @@
 <body data-page="materials-leathers">
 <!-- shared:header:start -->
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
-  <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="menuDialog" aria-expanded="false" data-open="menuDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/></svg></button>
-  <a class="logo" href="../index.html" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25"></a>
+<header class="site-header">
+  <a href="../index.html" class="logo">
+    <img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25">
+  </a>
   <nav class="primary-nav" aria-label="Main navigation">
+    <a href="../index.html" data-nav="index">Home</a>
     <a href="../pages/products.html" data-nav="products">Products</a>
-    <a href="../pages/materials.html" data-nav="materials">Material Library</a>
+    <a href="../pages/materials.html" data-nav="materials">Materials</a>
     <a href="../pages/magazine.html" data-nav="magazine">Magazine</a>
-    <a href="../pages/about.html#designers" data-nav="designers">Designers</a>
     <a href="../pages/professionals.html" data-nav="professionals">Professionals</a>
     <a href="../pages/about.html" data-nav="about">About us</a>
     <a href="../pages/sustainability.html" data-nav="sustainability">Sustainability</a>
+    <a href="../pages/contact.html" data-nav="contact">Contact</a>
   </nav>
-  <div class="header-tools">
-    <button class="icon-button" type="button" aria-label="Search" data-open="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></button>
-    <button class="icon-button" type="button" aria-label="Wish list" data-open="wishlistDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg><span class="wish-count" hidden></span></button>
-    <a class="utility-link" href="../pages/contact.html#retailers">Retailers</a>
-    <a class="utility-link" href="../pages/professionals.html#downloads">Downloads</a>
-    <a class="utility-link" href="../pages/contact.html#contact">Contact</a>
-    <a class="icon-button mobile-contact" href="../pages/contact.html" aria-label="Retailers and contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
-    <span class="language" title="English">EN</span>
-  </div>
 </header>
-<dialog class="menu-dialog" id="menuDialog" aria-labelledby="menuTitle">
-  <div class="dialog-top"><span id="menuTitle">Explore Walter Knoll</span><button class="icon-button" type="button" aria-label="Close menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <nav class="drawer-nav" aria-label="Mobile navigation">
-    <a href="../pages/products.html">Products <span>→</span></a>
-    <a href="../pages/materials.html">Material Library <span>→</span></a>
-    <a href="../pages/magazine.html">Magazine <span>→</span></a>
-    <a href="../pages/about.html#designers">Designers <span>→</span></a>
-    <a href="../pages/professionals.html">Professionals <span>→</span></a>
-    <a href="../pages/about.html">About us <span>→</span></a>
-    <a href="../pages/sustainability.html">Sustainability <span>→</span></a>
-    <a href="../pages/contact.html#retailers">Retailers <span>→</span></a>
-    <a href="../pages/professionals.html#downloads">Downloads <span>→</span></a>
-    <a href="../pages/contact.html#contact">Contact <span>→</span></a>
-  </nav>
-</dialog>
-<dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-  <div class="dialog-top"><h2 id="searchTitle">Find your inspiration.</h2><button class="icon-button" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <label class="search-field"><span class="sr-only">Search products, materials and stories</span><input id="siteSearch" type="search" placeholder="Search products, materials and stories…" autocomplete="off"></label>
-  <p class="small muted" id="searchSummary" role="status">Explore the collection or enter a search term.</p>
-  <div id="searchResults" class="search-results"></div>
-</dialog>
-<dialog class="content-dialog" id="wishlistDialog" aria-labelledby="wishlistTitle">
-  <div class="dialog-top"><h2 id="wishlistTitle">Your wish list.</h2><button class="icon-button" type="button" aria-label="Close wish list" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <div id="wishlistContent"></div>
-</dialog>
-<dialog class="content-dialog" id="detailDialog" aria-labelledby="detailTitle"><button class="icon-button detail-close" type="button" aria-label="Close detail" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detailContent"></div></dialog>
 
 <!-- shared:header:end -->
-<main id="main">
-<section class="page-head container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><a href="../pages/materials.html">Material Library</a><span aria-hidden="true">›</span><span aria-current="page">Leathers</span></nav><h1>Leathers</h1><p class="lead">Natural character, subtle grain and a palette of warm tones. Explore a selection of Elen leather colors.</p></section><section class="container section leather-layout"><figure><img id="leatherPreview" class="leather-preview" src="../assets/images/materials/elen-1225-cognac.jpg" alt="Elen leather — 1225 cognac"><figcaption id="colorCaption">Elen · 1225 cognac</figcaption></figure><div class="leather-copy"><p class="eyebrow">Refined aniline / wax leather</p><h2>Elen</h2><p class="body-copy section-copy">A wax finish brings depth to the color and highlights the individual grain. Select a swatch to explore its texture.</p><dl class="material-properties"><div><dt>Material</dt><dd>Aniline leather, refined / wax leather</dd></div><div><dt>Thickness</dt><dd>1.3–1.4 mm</dd></div><div><dt>Selected color</dt><dd id="selectedColor" aria-live="polite">1225 cognac</dd></div></dl><p class="small muted">Digital colors are indicative. See a physical sample for your final selection.</p><p class="section-copy"><a class="arrow-link" href="contact.html">Visit a showroom <span aria-hidden="true">→</span></a></p></div></section><section class="container section"><div class="section-head"><h2>The color palette</h2><span class="small muted">Elen leather</span></div><div class="swatch-grid" role="group" aria-label="Leather colors"><button class="swatch" type="button" data-swatch="1217 atlantic" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1217-atlantic.jpg" alt="1217 atlantic" loading="lazy"><span>1217 atlantic</span></button><button class="swatch" type="button" data-swatch="1218 cosy grey" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1218-cosy-grey.jpg" alt="1218 cosy grey" loading="lazy"><span>1218 cosy grey</span></button><button class="swatch" type="button" data-swatch="1219 oyster" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1219-oyster.jpg" alt="1219 oyster" loading="lazy"><span>1219 oyster</span></button><button class="swatch" type="button" data-swatch="1221 dark brown" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1221-dark-brown.jpg" alt="1221 dark brown" loading="lazy"><span>1221 dark brown</span></button><button class="swatch" type="button" data-swatch="1222 coconut" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1222-coconut.jpg" alt="1222 coconut" loading="lazy"><span>1222 coconut</span></button><button class="swatch" type="button" data-swatch="1225 cognac" aria-pressed="true"><img class="" src="../assets/images/materials/elen-1225-cognac.jpg" alt="1225 cognac" loading="lazy"><span>1225 cognac</span></button><button class="swatch" type="button" data-swatch="1226 loam" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1226-loam.jpg" alt="1226 loam" loading="lazy"><span>1226 loam</span></button><button class="swatch" type="button" data-swatch="1230 black" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1230-black.jpg" alt="1230 black" loading="lazy"><span>1230 black</span></button><button class="swatch" type="button" data-swatch="1380 toffee" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1380-toffee.jpg" alt="1380 toffee" loading="lazy"><span>1380 toffee</span></button><button class="swatch" type="button" data-swatch="1381 khaki" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1381-khaki.jpg" alt="1381 khaki" loading="lazy"><span>1381 khaki</span></button><button class="swatch" type="button" data-swatch="1382 sahara" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1382-sahara.jpg" alt="1382 sahara" loading="lazy"><span>1382 sahara</span></button><button class="swatch" type="button" data-swatch="1390 ivory" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1390-ivory.jpg" alt="1390 ivory" loading="lazy"><span>1390 ivory</span></button><button class="swatch" type="button" data-swatch="1401 tan" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1401-tan.jpg" alt="1401 tan" loading="lazy"><span>1401 tan</span></button><button class="swatch" type="button" data-swatch="1403 mocca" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1403-mocca.jpg" alt="1403 mocca" loading="lazy"><span>1403 mocca</span></button><button class="swatch" type="button" data-swatch="1406 taupe" aria-pressed="false"><img class="" src="../assets/images/materials/elen-1406-taupe.jpg" alt="1406 taupe" loading="lazy"><span>1406 taupe</span></button></div></section><section class="container section"><div class="section-head"><h2>Explore more materials</h2><a class="arrow-link" href="materials.html">Material Library <span aria-hidden="true">→</span></a></div><div class="three-column"><a class="image-card" href="materials.html#fabrics"><span class="image-frame"><img class="" src="../assets/images/materials/fabrics.jpg" alt="Fabrics" loading="lazy"></span><h3>Fabrics</h3></a><a class="image-card" href="materials.html#woods"><span class="image-frame"><img class="" src="../assets/images/materials/woods.jpg" alt="Woods" loading="lazy"></span><h3>Woods</h3></a><a class="image-card" href="materials.html#stones"><span class="image-frame"><img class="" src="../assets/images/materials/stones.jpg" alt="Stones" loading="lazy"></span><h3>Stones</h3></a></div></section>
-</main>
+  <main id="main">
+    <section class="page-head">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / <a href="materials.html">Material Library</a> / Leathers</p>
+      <h1>Leathers</h1>
+      <p>Explore the colors of Elen leather. Click a color below to change the picture.</p>
+    </section>
+
+    <section class="section two-column">
+      <figure>
+        <img id="leatherPreview" src="../assets/images/materials/elen-1225-cognac.jpg" alt="Elen leather: 1225 cognac">
+        <figcaption id="colorCaption">Elen: 1225 cognac</figcaption>
+      </figure>
+      <div>
+        <h2 id="leatherTitle">Elen: 1225 cognac</h2>
+        <p>A wax finish gives depth to the color and highlights the leather grain.</p>
+        <p><strong>Material:</strong> aniline leather, refined / wax leather</p>
+        <p><strong>Thickness:</strong> 1.3–1.4 mm</p>
+        <p><strong>Selected color:</strong> <span id="selectedColor" aria-live="polite">1225 cognac</span></p>
+        <p class="muted">Colors on a screen can look different from real samples.</p>
+        <p><a href="contact.html#retailers">Find a showroom</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The color palette</h2>
+      <div class="swatch-grid" role="group" aria-label="Elen leather colors">
+        <button class="swatch" type="button" data-swatch="1217 atlantic" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1217-atlantic.jpg" alt="1217 atlantic" loading="lazy">
+          <span>1217 atlantic</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1218 cosy grey" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1218-cosy-grey.jpg" alt="1218 cosy grey" loading="lazy">
+          <span>1218 cosy grey</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1219 oyster" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1219-oyster.jpg" alt="1219 oyster" loading="lazy">
+          <span>1219 oyster</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1221 dark brown" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1221-dark-brown.jpg" alt="1221 dark brown" loading="lazy">
+          <span>1221 dark brown</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1222 coconut" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1222-coconut.jpg" alt="1222 coconut" loading="lazy">
+          <span>1222 coconut</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1225 cognac" aria-pressed="true">
+          <img src="../assets/images/materials/elen-1225-cognac.jpg" alt="1225 cognac" loading="lazy">
+          <span>1225 cognac</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1226 loam" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1226-loam.jpg" alt="1226 loam" loading="lazy">
+          <span>1226 loam</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1230 black" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1230-black.jpg" alt="1230 black" loading="lazy">
+          <span>1230 black</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1380 toffee" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1380-toffee.jpg" alt="1380 toffee" loading="lazy">
+          <span>1380 toffee</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1381 khaki" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1381-khaki.jpg" alt="1381 khaki" loading="lazy">
+          <span>1381 khaki</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1382 sahara" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1382-sahara.jpg" alt="1382 sahara" loading="lazy">
+          <span>1382 sahara</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1390 ivory" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1390-ivory.jpg" alt="1390 ivory" loading="lazy">
+          <span>1390 ivory</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1401 tan" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1401-tan.jpg" alt="1401 tan" loading="lazy">
+          <span>1401 tan</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1403 mocca" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1403-mocca.jpg" alt="1403 mocca" loading="lazy">
+          <span>1403 mocca</span>
+        </button>
+        <button class="swatch" type="button" data-swatch="1406 taupe" aria-pressed="false">
+          <img src="../assets/images/materials/elen-1406-taupe.jpg" alt="1406 taupe" loading="lazy">
+          <span>1406 taupe</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>More materials</h2>
+      <ul>
+        <li><a href="materials.html#fabrics">Fabrics</a></li>
+        <li><a href="materials.html#woods">Woods</a></li>
+        <li><a href="materials.html#stones">Stones</a></li>
+      </ul>
+      <p><a href="https://www.walterknoll.info/en/materials/overview/leathers">Leather information on the official website</a></p>
+    </section>
+  </main>
 <!-- shared:footer:start -->
 <footer class="site-footer">
-  <div class="container">
-    <a href="../index.html" class="footer-logo" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25" loading="lazy"></a>
-    <div class="footer-grid">
-      <div><h3>Products</h3><ul><li><a href="../pages/products-chairs.html">Chairs &amp; Barstools</a></li><li><a href="../pages/products.html?category=lounge-chairs">Lounge Chairs</a></li><li><a href="../pages/products.html?category=sofas-benches">Sofas &amp; Benches</a></li><li><a href="../pages/products.html?category=tables">Tables</a></li><li><a href="../pages/products.html?category=executive-desks">Executive Desks</a></li><li><a href="../pages/products.html">All Products</a></li></ul></div>
-      <div><h3>Material Library</h3><ul><li><a href="../pages/materials.html#inspiration">Inspiration</a></li><li><a href="../pages/materials-leathers.html">Leathers</a></li><li><a href="../pages/materials.html#fabrics">Fabrics</a></li><li><a href="../pages/materials.html#woods">Woods</a></li><li><a href="../pages/materials.html#stones">Stones</a></li><li><a href="../pages/materials.html#faq">FAQ</a></li></ul></div>
-      <div><h3>About us</h3><ul><li><a href="../pages/about.html#purpose">Our Purpose</a></li><li><a href="../pages/about.html#history">Our History</a></li><li><a href="../pages/about.html#designers">Our Designers</a></li><li><a href="../pages/contact.html#retailers">Showrooms</a></li><li><a href="../pages/sustainability.html">Sustainability</a></li></ul></div>
-      <div><h3>Professionals</h3><ul><li><a href="../pages/professionals.html#downloads">Downloads</a></li><li><a href="../pages/magazine.html?category=References">Projects</a></li><li><a href="../pages/professionals.html#campus">Campus of Competence</a></li><li><a href="../pages/professionals.html#tools">pCon Tools</a></li><li><a href="../pages/contact.html#contact">Contact</a></li></ul></div>
-      <div><h3>Magazine</h3><ul><li><a href="../pages/magazine.html">All Topics</a></li><li><a href="../pages/magazine.html?category=News">News</a></li><li><a href="../pages/magazine.html?category=Stories">Stories</a></li><li><a href="../pages/magazine.html?category=References">References</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>© Walter Knoll · Frontend study</p><p>Independent educational recreation. Images and brand belong to Walter Knoll.</p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Visit the original ↗</a><button class="text-button" type="button" data-top>Back to top ↑</button></div>
-  </div>
+  <p>Walter Knoll · Frontend study</p>
+  <p>
+    <a href="../pages/products-chairs.html">Chairs &amp; Barstools</a> |
+    <a href="../pages/materials-leathers.html">Leathers</a> |
+    <a href="../pages/about.html#designers">Designers</a> |
+    <a href="../pages/contact.html#retailers">Showrooms</a> |
+    <a href="../pages/professionals.html#downloads">Downloads</a>
+  </p>
+  <p class="muted">Educational practice. Images and brand belong to Walter Knoll.</p>
+  <p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Original website</a></p>
+  <button type="button" id="backToTop">Back to top</button>
 </footer>
-<dialog class="content-dialog newsletter-dialog" id="newsletterDialog" aria-labelledby="newsletterTitle">
-  <div class="dialog-top"><h2 id="newsletterTitle">Stay inspired.</h2><button class="icon-button" type="button" aria-label="Close newsletter" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <p>Discover design, materials and new perspectives.</p>
-  <form id="newsletterForm"><label>Email address<input type="email" name="email" autocomplete="email" required placeholder="Your email address"></label><label class="checkbox-field"><input type="checkbox" required> I understand this is a local demonstration.</label><button class="button" type="submit">Subscribe <span>→</span></button><p class="form-status" role="status"></p></form>
-  <p class="small muted">Study demo: your address is not sent or saved. Visit the original website for the official newsletter.</p>
-</dialog>
-<div class="toast" role="status" hidden></div>
 
 <!-- shared:footer:end -->
-<script type="module" src="../js/common.js"></script>
-<script type="module" src="../js/pages/materials-leathers.js"></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/pages/materials-leathers.js" defer></script>
 </body>
 </html>

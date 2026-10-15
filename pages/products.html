@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent educational recreation of Walter Knoll — Products.">
-  <title>Products | Walter Knoll — Frontend Study</title>
+  <meta name="description" content="Walter Knoll furniture website study: Products.">
+  <title>Products | Walter Knoll Study</title>
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
@@ -14,83 +14,144 @@
 <body data-page="products">
 <!-- shared:header:start -->
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
-  <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="menuDialog" aria-expanded="false" data-open="menuDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/></svg></button>
-  <a class="logo" href="../index.html" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25"></a>
+<header class="site-header">
+  <a href="../index.html" class="logo">
+    <img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25">
+  </a>
   <nav class="primary-nav" aria-label="Main navigation">
+    <a href="../index.html" data-nav="index">Home</a>
     <a href="../pages/products.html" data-nav="products">Products</a>
-    <a href="../pages/materials.html" data-nav="materials">Material Library</a>
+    <a href="../pages/materials.html" data-nav="materials">Materials</a>
     <a href="../pages/magazine.html" data-nav="magazine">Magazine</a>
-    <a href="../pages/about.html#designers" data-nav="designers">Designers</a>
     <a href="../pages/professionals.html" data-nav="professionals">Professionals</a>
     <a href="../pages/about.html" data-nav="about">About us</a>
     <a href="../pages/sustainability.html" data-nav="sustainability">Sustainability</a>
+    <a href="../pages/contact.html" data-nav="contact">Contact</a>
   </nav>
-  <div class="header-tools">
-    <button class="icon-button" type="button" aria-label="Search" data-open="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></button>
-    <button class="icon-button" type="button" aria-label="Wish list" data-open="wishlistDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg><span class="wish-count" hidden></span></button>
-    <a class="utility-link" href="../pages/contact.html#retailers">Retailers</a>
-    <a class="utility-link" href="../pages/professionals.html#downloads">Downloads</a>
-    <a class="utility-link" href="../pages/contact.html#contact">Contact</a>
-    <a class="icon-button mobile-contact" href="../pages/contact.html" aria-label="Retailers and contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
-    <span class="language" title="English">EN</span>
-  </div>
 </header>
-<dialog class="menu-dialog" id="menuDialog" aria-labelledby="menuTitle">
-  <div class="dialog-top"><span id="menuTitle">Explore Walter Knoll</span><button class="icon-button" type="button" aria-label="Close menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <nav class="drawer-nav" aria-label="Mobile navigation">
-    <a href="../pages/products.html">Products <span>→</span></a>
-    <a href="../pages/materials.html">Material Library <span>→</span></a>
-    <a href="../pages/magazine.html">Magazine <span>→</span></a>
-    <a href="../pages/about.html#designers">Designers <span>→</span></a>
-    <a href="../pages/professionals.html">Professionals <span>→</span></a>
-    <a href="../pages/about.html">About us <span>→</span></a>
-    <a href="../pages/sustainability.html">Sustainability <span>→</span></a>
-    <a href="../pages/contact.html#retailers">Retailers <span>→</span></a>
-    <a href="../pages/professionals.html#downloads">Downloads <span>→</span></a>
-    <a href="../pages/contact.html#contact">Contact <span>→</span></a>
-  </nav>
-</dialog>
-<dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-  <div class="dialog-top"><h2 id="searchTitle">Find your inspiration.</h2><button class="icon-button" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <label class="search-field"><span class="sr-only">Search products, materials and stories</span><input id="siteSearch" type="search" placeholder="Search products, materials and stories…" autocomplete="off"></label>
-  <p class="small muted" id="searchSummary" role="status">Explore the collection or enter a search term.</p>
-  <div id="searchResults" class="search-results"></div>
-</dialog>
-<dialog class="content-dialog" id="wishlistDialog" aria-labelledby="wishlistTitle">
-  <div class="dialog-top"><h2 id="wishlistTitle">Your wish list.</h2><button class="icon-button" type="button" aria-label="Close wish list" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <div id="wishlistContent"></div>
-</dialog>
-<dialog class="content-dialog" id="detailDialog" aria-labelledby="detailTitle"><button class="icon-button detail-close" type="button" aria-label="Close detail" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detailContent"></div></dialog>
 
 <!-- shared:header:end -->
-<main id="main">
-<section class="page-head container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Our Products</span></nav><h1>Our Products</h1><p class="lead">Discover furniture for living, working and gathering. Explore the collection by category, designer or name.</p></section><section class="container category-grid section"><a class="image-card" href="products-chairs.html"><span class="image-frame"><img class="" src="../assets/images/products/category-chairs-barstools.jpg" alt="Chairs &amp; Barstools" loading="lazy"></span><h3>Chairs &amp; Barstools</h3></a><a class="image-card" href="products.html?category=lounge-chairs#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-lounge-chairs.jpg" alt="Lounge Chairs" loading="lazy"></span><h3>Lounge Chairs</h3></a><a class="image-card" href="products.html?category=sofas-benches#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-sofas-benches.jpg" alt="Sofas &amp; Benches" loading="lazy"></span><h3>Sofas &amp; Benches</h3></a><a class="image-card" href="products.html?category=tables#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-tables.jpg" alt="Tables" loading="lazy"></span><h3>Tables</h3></a><a class="image-card" href="products.html?category=executive-desks#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-executive-desks.jpg" alt="Executive Desks" loading="lazy"></span><h3>Executive Desks</h3></a><a class="image-card" href="products.html?category=media-integration#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-media-integration.jpg" alt="Media Integration" loading="lazy"></span><h3>Media Integration</h3></a><a class="image-card" href="products.html?category=storage#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-storage.jpg" alt="Storage" loading="lazy"></span><h3>Storage</h3></a><a class="image-card" href="products.html?category=carpets-carpet-pillows#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-carpets-carpet-pillows.jpg" alt="Carpets &amp; Carpet Pillows" loading="lazy"></span><h3>Carpets &amp; Carpet Pillows</h3></a><a class="image-card" href="products.html?category=accessories-stools#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-accessories-stools.jpg" alt="Accessories &amp; Stools" loading="lazy"></span><h3>Accessories &amp; Stools</h3></a><a class="image-card" href="products.html?category=beds#collection"><span class="image-frame"><img class="" src="../assets/images/products/category-beds.jpg" alt="Beds" loading="lazy"></span><h3>Beds</h3></a></section><section class="container section" id="collection"><div class="section-head"><h2>Explore the collection</h2><a class="arrow-link" href="products-chairs.html">Chairs &amp; Barstools <span aria-hidden="true">→</span></a></div><div class="filter-bar"><label for="categoryFilter">Category<select id="categoryFilter"><option value="all">All products</option></select></label><label for="designerFilter">Designer<select id="designerFilter"><option value="all">All designers</option></select></label><label for="productSearch"><span class="sr-only">Search products</span><input type="search" id="productSearch" placeholder="Search the collection" autocomplete="off"></label><button type="button" class="text-button small" id="resetFilters">Reset</button><p class="results-count" id="productCount" role="status">Loading collection…</p></div><div class="chips" aria-label="Quick categories"><button type="button" data-category="all" aria-pressed="true">All products</button><button type="button" data-category="chairs-barstools" aria-pressed="false">Chairs & Barstools</button><button type="button" data-category="lounge-chairs" aria-pressed="false">Lounge Chairs</button><button type="button" data-category="sofas-benches" aria-pressed="false">Sofas & Benches</button><button type="button" data-category="tables" aria-pressed="false">Tables</button></div><div id="productGrid" class="three-column product-grid"></div><div class="empty-state" id="productEmpty" hidden><p>No products match these filters.</p><p class="small">Try another category or reset your search.</p></div><div class="load-more"><button class="button outline" type="button" id="loadMore">Load more products <span>↓</span></button></div></section>
-</main>
+  <main id="main">
+    <section class="page-head">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / Products</p>
+      <h1>Our Products</h1>
+      <p>Here are some furniture examples from the Walter Knoll collection.</p>
+      <p><a href="products-chairs.html">View chairs and barstools</a></p>
+    </section>
+
+    <section class="section" id="collection">
+      <h2>Product list</h2>
+      <div class="filters">
+        <label for="categoryFilter">Choose a category:</label>
+        <select id="categoryFilter">
+          <option value="all">All products</option>
+            <option value="chairs-barstools">Chairs &amp; Barstools</option>
+            <option value="lounge-chairs">Lounge Chairs</option>
+            <option value="sofas-benches">Sofas &amp; Benches</option>
+            <option value="tables">Tables</option>
+            <option value="executive-desks">Executive Desks</option>
+            <option value="media-integration">Media Integration</option>
+            <option value="storage">Storage</option>
+            <option value="carpets-carpet-pillows">Carpets &amp; Carpet Pillows</option>
+            <option value="accessories-stools">Accessories &amp; Stools</option>
+            <option value="beds">Beds</option>
+        </select>
+      </div>
+      <p id="productCount" role="status">Showing 12 products.</p>
+      <div class="card-grid" id="productGrid">
+        <article class="card product-card" data-category="chairs-barstools">
+          <img src="../assets/images/products/ayabi-chair.jpg" alt="Ayabi Chair" loading="lazy">
+          <h3>Ayabi Chair</h3>
+          <p>Chairs &amp; Barstools</p>
+          <a href="https://www.walterknoll.info/en/products/chairs-barstools/ayabi-chair">Product information</a>
+        </article>
+        <article class="card product-card" data-category="chairs-barstools">
+          <img src="../assets/images/products/cuoio-barstool.jpg" alt="Cuoio Barstool" loading="lazy">
+          <h3>Cuoio Barstool</h3>
+          <p>Chairs &amp; Barstools</p>
+          <a href="https://www.walterknoll.info/en/products/chairs-barstools/cuoio-barstool">Product information</a>
+        </article>
+        <article class="card product-card" data-category="lounge-chairs">
+          <img src="../assets/images/products/samay-armchair.jpg" alt="Samay Armchair" loading="lazy">
+          <h3>Samay Armchair</h3>
+          <p>Lounge Chairs</p>
+          <a href="https://www.walterknoll.info/en/products/lounge-chairs/samay-armchair">Product information</a>
+        </article>
+        <article class="card product-card" data-category="sofas-benches">
+          <img src="../assets/images/products/molamisa-sofa.jpg" alt="Molamisa Sofa" loading="lazy">
+          <h3>Molamisa Sofa</h3>
+          <p>Sofas &amp; Benches</p>
+          <a href="https://www.walterknoll.info/en/products/sofas-benches/molamisa-sofa">Product information</a>
+        </article>
+        <article class="card product-card" data-category="tables">
+          <img src="../assets/images/products/amorin-table.jpg" alt="Amorin Table" loading="lazy">
+          <h3>Amorin Table</h3>
+          <p>Tables</p>
+          <a href="https://www.walterknoll.info/en/products/tables/amorin-table">Product information</a>
+        </article>
+        <article class="card product-card" data-category="tables">
+          <img src="../assets/images/products/suti-table.jpg" alt="Suti Table" loading="lazy">
+          <h3>Suti Table</h3>
+          <p>Tables</p>
+          <a href="https://www.walterknoll.info/en/products/tables/suti-table">Product information</a>
+        </article>
+        <article class="card product-card" data-category="executive-desks">
+          <img src="../assets/images/products/management-x.jpg" alt="Management-X" loading="lazy">
+          <h3>Management-X</h3>
+          <p>Executive Desks</p>
+          <a href="https://www.walterknoll.info/en/products/executive-desks/management-x">Product information</a>
+        </article>
+        <article class="card product-card" data-category="media-integration">
+          <img src="../assets/images/products/Connector-X.jpg" alt="Connector-X" loading="lazy">
+          <h3>Connector-X</h3>
+          <p>Media Integration</p>
+          <a href="https://www.walterknoll.info/en/products/media-integration/Connector-X">Product information</a>
+        </article>
+        <article class="card product-card" data-category="storage">
+          <img src="../assets/images/products/the-farns-sideboard-low.jpg" alt="The Farns Sideboard Low" loading="lazy">
+          <h3>The Farns Sideboard Low</h3>
+          <p>Storage</p>
+          <a href="https://www.walterknoll.info/en/products/storage/the-farns-sideboard-low">Product information</a>
+        </article>
+        <article class="card product-card" data-category="carpets-carpet-pillows">
+          <img src="../assets/images/products/rodolith-carpet.jpg" alt="Rodolith Carpet" loading="lazy">
+          <h3>Rodolith Carpet</h3>
+          <p>Carpets &amp; Carpet Pillows</p>
+          <a href="https://www.walterknoll.info/en/products/carpets-carpet-pillows/rodolith-carpet">Product information</a>
+        </article>
+        <article class="card product-card" data-category="accessories-stools">
+          <img src="../assets/images/products/ishino-stool.jpg" alt="Ishino Stool" loading="lazy">
+          <h3>Ishino Stool</h3>
+          <p>Accessories &amp; Stools</p>
+          <a href="https://www.walterknoll.info/en/products/accessories-stools/ishino-stool">Product information</a>
+        </article>
+        <article class="card product-card" data-category="beds">
+          <img src="../assets/images/products/Ison-Bed.jpg" alt="Ison Bed" loading="lazy">
+          <h3>Ison Bed</h3>
+          <p>Beds</p>
+          <a href="https://www.walterknoll.info/en/products/beds/Ison-Bed">Product information</a>
+        </article>
+      </div>
+      <p>Open a product link to read the full information on the official website.</p>
+    </section>
+  </main>
 <!-- shared:footer:start -->
 <footer class="site-footer">
-  <div class="container">
-    <a href="../index.html" class="footer-logo" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25" loading="lazy"></a>
-    <div class="footer-grid">
-      <div><h3>Products</h3><ul><li><a href="../pages/products-chairs.html">Chairs &amp; Barstools</a></li><li><a href="../pages/products.html?category=lounge-chairs">Lounge Chairs</a></li><li><a href="../pages/products.html?category=sofas-benches">Sofas &amp; Benches</a></li><li><a href="../pages/products.html?category=tables">Tables</a></li><li><a href="../pages/products.html?category=executive-desks">Executive Desks</a></li><li><a href="../pages/products.html">All Products</a></li></ul></div>
-      <div><h3>Material Library</h3><ul><li><a href="../pages/materials.html#inspiration">Inspiration</a></li><li><a href="../pages/materials-leathers.html">Leathers</a></li><li><a href="../pages/materials.html#fabrics">Fabrics</a></li><li><a href="../pages/materials.html#woods">Woods</a></li><li><a href="../pages/materials.html#stones">Stones</a></li><li><a href="../pages/materials.html#faq">FAQ</a></li></ul></div>
-      <div><h3>About us</h3><ul><li><a href="../pages/about.html#purpose">Our Purpose</a></li><li><a href="../pages/about.html#history">Our History</a></li><li><a href="../pages/about.html#designers">Our Designers</a></li><li><a href="../pages/contact.html#retailers">Showrooms</a></li><li><a href="../pages/sustainability.html">Sustainability</a></li></ul></div>
-      <div><h3>Professionals</h3><ul><li><a href="../pages/professionals.html#downloads">Downloads</a></li><li><a href="../pages/magazine.html?category=References">Projects</a></li><li><a href="../pages/professionals.html#campus">Campus of Competence</a></li><li><a href="../pages/professionals.html#tools">pCon Tools</a></li><li><a href="../pages/contact.html#contact">Contact</a></li></ul></div>
-      <div><h3>Magazine</h3><ul><li><a href="../pages/magazine.html">All Topics</a></li><li><a href="../pages/magazine.html?category=News">News</a></li><li><a href="../pages/magazine.html?category=Stories">Stories</a></li><li><a href="../pages/magazine.html?category=References">References</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>© Walter Knoll · Frontend study</p><p>Independent educational recreation. Images and brand belong to Walter Knoll.</p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Visit the original ↗</a><button class="text-button" type="button" data-top>Back to top ↑</button></div>
-  </div>
+  <p>Walter Knoll · Frontend study</p>
+  <p>
+    <a href="../pages/products-chairs.html">Chairs &amp; Barstools</a> |
+    <a href="../pages/materials-leathers.html">Leathers</a> |
+    <a href="../pages/about.html#designers">Designers</a> |
+    <a href="../pages/contact.html#retailers">Showrooms</a> |
+    <a href="../pages/professionals.html#downloads">Downloads</a>
+  </p>
+  <p class="muted">Educational practice. Images and brand belong to Walter Knoll.</p>
+  <p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Original website</a></p>
+  <button type="button" id="backToTop">Back to top</button>
 </footer>
-<dialog class="content-dialog newsletter-dialog" id="newsletterDialog" aria-labelledby="newsletterTitle">
-  <div class="dialog-top"><h2 id="newsletterTitle">Stay inspired.</h2><button class="icon-button" type="button" aria-label="Close newsletter" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <p>Discover design, materials and new perspectives.</p>
-  <form id="newsletterForm"><label>Email address<input type="email" name="email" autocomplete="email" required placeholder="Your email address"></label><label class="checkbox-field"><input type="checkbox" required> I understand this is a local demonstration.</label><button class="button" type="submit">Subscribe <span>→</span></button><p class="form-status" role="status"></p></form>
-  <p class="small muted">Study demo: your address is not sent or saved. Visit the original website for the official newsletter.</p>
-</dialog>
-<div class="toast" role="status" hidden></div>
 
 <!-- shared:footer:end -->
-<script type="module" src="../js/common.js"></script>
-<script type="module" src="../js/pages/products.js"></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/pages/products.js" defer></script>
 </body>
 </html>

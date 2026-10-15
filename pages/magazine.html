@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent educational recreation of Walter Knoll — Magazine.">
-  <title>Magazine | Walter Knoll — Frontend Study</title>
+  <title>Magazine | Walter Knoll Study</title>
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
@@ -14,83 +13,113 @@
 <body data-page="magazine">
 <!-- shared:header:start -->
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
-  <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="menuDialog" aria-expanded="false" data-open="menuDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/></svg></button>
-  <a class="logo" href="../index.html" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25"></a>
+<header class="site-header">
+  <a href="../index.html" class="logo">
+    <img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25">
+  </a>
   <nav class="primary-nav" aria-label="Main navigation">
+    <a href="../index.html" data-nav="index">Home</a>
     <a href="../pages/products.html" data-nav="products">Products</a>
-    <a href="../pages/materials.html" data-nav="materials">Material Library</a>
+    <a href="../pages/materials.html" data-nav="materials">Materials</a>
     <a href="../pages/magazine.html" data-nav="magazine">Magazine</a>
-    <a href="../pages/about.html#designers" data-nav="designers">Designers</a>
     <a href="../pages/professionals.html" data-nav="professionals">Professionals</a>
     <a href="../pages/about.html" data-nav="about">About us</a>
     <a href="../pages/sustainability.html" data-nav="sustainability">Sustainability</a>
+    <a href="../pages/contact.html" data-nav="contact">Contact</a>
   </nav>
-  <div class="header-tools">
-    <button class="icon-button" type="button" aria-label="Search" data-open="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></button>
-    <button class="icon-button" type="button" aria-label="Wish list" data-open="wishlistDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg><span class="wish-count" hidden></span></button>
-    <a class="utility-link" href="../pages/contact.html#retailers">Retailers</a>
-    <a class="utility-link" href="../pages/professionals.html#downloads">Downloads</a>
-    <a class="utility-link" href="../pages/contact.html#contact">Contact</a>
-    <a class="icon-button mobile-contact" href="../pages/contact.html" aria-label="Retailers and contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
-    <span class="language" title="English">EN</span>
-  </div>
 </header>
-<dialog class="menu-dialog" id="menuDialog" aria-labelledby="menuTitle">
-  <div class="dialog-top"><span id="menuTitle">Explore Walter Knoll</span><button class="icon-button" type="button" aria-label="Close menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <nav class="drawer-nav" aria-label="Mobile navigation">
-    <a href="../pages/products.html">Products <span>→</span></a>
-    <a href="../pages/materials.html">Material Library <span>→</span></a>
-    <a href="../pages/magazine.html">Magazine <span>→</span></a>
-    <a href="../pages/about.html#designers">Designers <span>→</span></a>
-    <a href="../pages/professionals.html">Professionals <span>→</span></a>
-    <a href="../pages/about.html">About us <span>→</span></a>
-    <a href="../pages/sustainability.html">Sustainability <span>→</span></a>
-    <a href="../pages/contact.html#retailers">Retailers <span>→</span></a>
-    <a href="../pages/professionals.html#downloads">Downloads <span>→</span></a>
-    <a href="../pages/contact.html#contact">Contact <span>→</span></a>
-  </nav>
-</dialog>
-<dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-  <div class="dialog-top"><h2 id="searchTitle">Find your inspiration.</h2><button class="icon-button" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <label class="search-field"><span class="sr-only">Search products, materials and stories</span><input id="siteSearch" type="search" placeholder="Search products, materials and stories…" autocomplete="off"></label>
-  <p class="small muted" id="searchSummary" role="status">Explore the collection or enter a search term.</p>
-  <div id="searchResults" class="search-results"></div>
-</dialog>
-<dialog class="content-dialog" id="wishlistDialog" aria-labelledby="wishlistTitle">
-  <div class="dialog-top"><h2 id="wishlistTitle">Your wish list.</h2><button class="icon-button" type="button" aria-label="Close wish list" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <div id="wishlistContent"></div>
-</dialog>
-<dialog class="content-dialog" id="detailDialog" aria-labelledby="detailTitle"><button class="icon-button detail-close" type="button" aria-label="Close detail" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detailContent"></div></dialog>
 
 <!-- shared:header:end -->
 <main id="main">
-<section class="page-head container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Magazine</span></nav><h1>Magazine</h1><p class="lead">Design in context. Discover stories, people and places from the world of Walter Knoll.</p></section><section class="container section magazine-section"><div class="magazine-filter"><div class="tabs" role="tablist" aria-label="Magazine topics"><button type="button" role="tab" id="topic0" data-topic="All Topics" aria-controls="articleList" aria-selected="true" tabindex="0">All Topics</button><button type="button" role="tab" id="topic1" data-topic="News" aria-controls="articleList" aria-selected="false" tabindex="-1">News</button><button type="button" role="tab" id="topic2" data-topic="Stories" aria-controls="articleList" aria-selected="false" tabindex="-1">Stories</button><button type="button" role="tab" id="topic3" data-topic="References" aria-controls="articleList" aria-selected="false" tabindex="-1">References</button></div><p id="articleCount" class="small muted" role="status">Loading stories…</p></div><div id="articleList" role="tabpanel" aria-labelledby="topic0" tabindex="0"></div></section><section class="newsletter-strip container section"><h2>Stay inspired.</h2><p>New designs, remarkable spaces and stories from the world of Walter Knoll.</p><button class="button" type="button" data-open="newsletterDialog">Subscribe <span aria-hidden="true">→</span></button></section>
+  <section class="page-head">
+    <p class="breadcrumbs"><a href="../index.html">Home</a> / Magazine</p>
+    <h1>Magazine</h1>
+    <p>News, stories and furniture projects from Walter Knoll.</p>
+  </section>
+
+  <section class="section" aria-label="Articles">
+    <div class="filters" aria-label="Filter articles by topic">
+      <button type="button" data-topic="All Topics" aria-pressed="true">All Topics</button>
+      <button type="button" data-topic="News" aria-pressed="false">News</button>
+      <button type="button" data-topic="Stories" aria-pressed="false">Stories</button>
+      <button type="button" data-topic="References" aria-pressed="false">References</button>
+    </div>
+    <p id="articleCount" role="status">9 articles</p>
+    <div class="card-grid" id="articleList">
+      <article class="card article-card" data-category="News">
+        <img src="../assets/images/magazine/sonderausstellung-bei-gaertner-hamburg.jpg" alt="Special Exhibition at gärtner, Hamburg" loading="lazy">
+        <p class="muted">News</p>
+        <h2>Special Exhibition at gärtner, Hamburg</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/sonderausstellung-bei-gaertner-hamburg" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="References">
+        <img src="../assets/images/magazine/retreat-park-am-see-nattika.jpg" alt="Retreat Park am See Nattika, Penzlin, Germany" loading="lazy">
+        <p class="muted">References</p>
+        <h2>Retreat Park am See Nattika, Penzlin, Germany</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/retreat-park-am-see-nattika" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="References">
+        <img src="../assets/images/magazine/fraport-terminal-3-frankfurt-germany.jpg" alt="Terminal 3, Frankfurt Airport, Germany" loading="lazy">
+        <p class="muted">References</p>
+        <h2>Terminal 3, Frankfurt Airport, Germany</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/fraport-terminal-3-frankfurt-germany" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="References">
+        <img src="../assets/images/magazine/medical-center-usa.jpg" alt="Medical Center in the U.S." loading="lazy">
+        <p class="muted">References</p>
+        <h2>Medical Center in the U.S.</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/medical-center-usa" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="Stories">
+        <img src="../assets/images/magazine/apartment-376-albert-street-melbourne-australia.jpg" alt="Apartment 376 Albert Street, Melbourne, Australia" loading="lazy">
+        <p class="muted">Stories</p>
+        <h2>Apartment 376 Albert Street, Melbourne, Australia</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/apartment-376-albert-street-melbourne-australia" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="Stories">
+        <img src="../assets/images/magazine/the-best-of-wood.jpg" alt="The Best of Wood" loading="lazy">
+        <p class="muted">Stories</p>
+        <h2>The Best of Wood</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/the-best-of-wood" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="Stories">
+        <img src="../assets/images/magazine/materials-that-touch-us.jpg" alt="Materials that touch us" loading="lazy">
+        <p class="muted">Stories</p>
+        <h2>Materials that touch us</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/materials-that-touch-us" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="News">
+        <img src="../assets/images/magazine/3daysofdesign-copenhagen-2026.jpg" alt="3 days of design - Copenhagen 2026" loading="lazy">
+        <p class="muted">News</p>
+        <h2>3 days of design - Copenhagen 2026</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/3daysofdesign-copenhagen-2026" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+      <article class="card article-card" data-category="News">
+        <img src="../assets/images/magazine/news-milan-design-week-2026.jpg" alt="News Milan Design Week 2026" loading="lazy">
+        <p class="muted">News</p>
+        <h2>News Milan Design Week 2026</h2>
+        <p><a href="https://www.walterknoll.info/en/magazine/news-milan-design-week-2026" target="_blank" rel="noopener">Read on the official website</a></p>
+      </article>
+    </div>
+  </section>
 </main>
 <!-- shared:footer:start -->
 <footer class="site-footer">
-  <div class="container">
-    <a href="../index.html" class="footer-logo" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25" loading="lazy"></a>
-    <div class="footer-grid">
-      <div><h3>Products</h3><ul><li><a href="../pages/products-chairs.html">Chairs &amp; Barstools</a></li><li><a href="../pages/products.html?category=lounge-chairs">Lounge Chairs</a></li><li><a href="../pages/products.html?category=sofas-benches">Sofas &amp; Benches</a></li><li><a href="../pages/products.html?category=tables">Tables</a></li><li><a href="../pages/products.html?category=executive-desks">Executive Desks</a></li><li><a href="../pages/products.html">All Products</a></li></ul></div>
-      <div><h3>Material Library</h3><ul><li><a href="../pages/materials.html#inspiration">Inspiration</a></li><li><a href="../pages/materials-leathers.html">Leathers</a></li><li><a href="../pages/materials.html#fabrics">Fabrics</a></li><li><a href="../pages/materials.html#woods">Woods</a></li><li><a href="../pages/materials.html#stones">Stones</a></li><li><a href="../pages/materials.html#faq">FAQ</a></li></ul></div>
-      <div><h3>About us</h3><ul><li><a href="../pages/about.html#purpose">Our Purpose</a></li><li><a href="../pages/about.html#history">Our History</a></li><li><a href="../pages/about.html#designers">Our Designers</a></li><li><a href="../pages/contact.html#retailers">Showrooms</a></li><li><a href="../pages/sustainability.html">Sustainability</a></li></ul></div>
-      <div><h3>Professionals</h3><ul><li><a href="../pages/professionals.html#downloads">Downloads</a></li><li><a href="../pages/magazine.html?category=References">Projects</a></li><li><a href="../pages/professionals.html#campus">Campus of Competence</a></li><li><a href="../pages/professionals.html#tools">pCon Tools</a></li><li><a href="../pages/contact.html#contact">Contact</a></li></ul></div>
-      <div><h3>Magazine</h3><ul><li><a href="../pages/magazine.html">All Topics</a></li><li><a href="../pages/magazine.html?category=News">News</a></li><li><a href="../pages/magazine.html?category=Stories">Stories</a></li><li><a href="../pages/magazine.html?category=References">References</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>© Walter Knoll · Frontend study</p><p>Independent educational recreation. Images and brand belong to Walter Knoll.</p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Visit the original ↗</a><button class="text-button" type="button" data-top>Back to top ↑</button></div>
-  </div>
+  <p>Walter Knoll · Frontend study</p>
+  <p>
+    <a href="../pages/products-chairs.html">Chairs &amp; Barstools</a> |
+    <a href="../pages/materials-leathers.html">Leathers</a> |
+    <a href="../pages/about.html#designers">Designers</a> |
+    <a href="../pages/contact.html#retailers">Showrooms</a> |
+    <a href="../pages/professionals.html#downloads">Downloads</a>
+  </p>
+  <p class="muted">Educational practice. Images and brand belong to Walter Knoll.</p>
+  <p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Original website</a></p>
+  <button type="button" id="backToTop">Back to top</button>
 </footer>
-<dialog class="content-dialog newsletter-dialog" id="newsletterDialog" aria-labelledby="newsletterTitle">
-  <div class="dialog-top"><h2 id="newsletterTitle">Stay inspired.</h2><button class="icon-button" type="button" aria-label="Close newsletter" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <p>Discover design, materials and new perspectives.</p>
-  <form id="newsletterForm"><label>Email address<input type="email" name="email" autocomplete="email" required placeholder="Your email address"></label><label class="checkbox-field"><input type="checkbox" required> I understand this is a local demonstration.</label><button class="button" type="submit">Subscribe <span>→</span></button><p class="form-status" role="status"></p></form>
-  <p class="small muted">Study demo: your address is not sent or saved. Visit the original website for the official newsletter.</p>
-</dialog>
-<div class="toast" role="status" hidden></div>
 
 <!-- shared:footer:end -->
-<script type="module" src="../js/common.js"></script>
-<script type="module" src="../js/pages/magazine.js"></script>
+<script src="../js/common.js" defer></script>
+<script src="../js/pages/magazine.js" defer></script>
 </body>
 </html>

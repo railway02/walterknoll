@@ -1,3 +1,42 @@
-/* C: large leather texture and selectable color swatches. */
-.leather-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;margin-top:20px;align-items:center}.leather-preview{aspect-ratio:1.05;object-fit:cover}.leather-layout figcaption{font-size:13px;margin-top:16px;color:var(--muted)}.leather-copy h2{font-size:58px}.material-properties{margin:30px 0}.material-properties>div{border-bottom:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:120px 1fr;gap:18px;font-size:14px}.material-properties dt{color:var(--muted)}.material-properties dd{margin:0}.swatch-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:30px 20px}.swatch{padding:0;text-align:left}.swatch img{aspect-ratio:1.3;object-fit:cover;border:3px solid transparent}.swatch span{font-size:13px;display:block;margin-top:8px}.swatch[aria-pressed=true] img{border-color:var(--ink);padding:3px}.swatch:hover img{border-color:var(--line)}
-@media(max-width:859px){.leather-layout{gap:32px}.swatch-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:599px){.leather-layout{grid-template-columns:1fr;gap:34px}.leather-preview{aspect-ratio:3/2}.leather-copy h2{font-size:44px}.swatch-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 14px}.swatch span{font-size:12px}}
+figure {
+  margin: 0;
+}
+
+#leatherPreview {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.swatch {
+  padding: 8px;
+  border: 1px solid #bbb;
+  background: #fff;
+  cursor: pointer;
+}
+
+.swatch img {
+  display: block;
+  width: 100%;
+  height: 85px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.swatch[aria-pressed="true"] {
+  border: 2px solid #333;
+  background: #eee;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .swatch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
