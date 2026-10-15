@@ -1,150 +1,180 @@
 {
-  "baseCommit": "70fe5390b7802abb23b3544c31896a02664cdade",
-  "workingTreeModified": false,
-  "observedAt": "2026-10-14T05:52:19.984Z",
+  "baseCommit": "43a19cf45e960be1988c5cb67c234f6315af68b8",
+  "workingTreeModified": true,
+  "observedAt": "2026-10-15T07:00:18.205Z",
   "environment": {
-    "node": "v24.10.0",
+    "node": "v24.19.0",
+    "primaryProtocol": "file:",
+    "httpBase": "http://localhost:4174",
     "browser": "140.0.7339.16"
   },
   "checks": [
     {
-      "name": "index renders at 1440px",
+      "name": "ten HTML pages use plain local scripts without modules or data requests",
       "result": "pass"
     },
     {
-      "name": "about renders at 1440px",
+      "name": "index renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "products renders at 1440px",
+      "name": "about renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "products-chairs renders at 1440px",
+      "name": "products renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "materials renders at 1440px",
+      "name": "products-chairs renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "materials-leathers renders at 1440px",
+      "name": "materials renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "magazine renders at 1440px",
+      "name": "materials-leathers renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "professionals renders at 1440px",
+      "name": "magazine renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "sustainability renders at 1440px",
+      "name": "professionals renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "contact renders at 1440px",
+      "name": "sustainability renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "index renders at 390px",
+      "name": "contact renders directly from file at 1440px",
       "result": "pass"
     },
     {
-      "name": "about renders at 390px",
+      "name": "index renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "products renders at 390px",
+      "name": "about renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "products-chairs renders at 390px",
+      "name": "products renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "materials renders at 390px",
+      "name": "products-chairs renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "materials-leathers renders at 390px",
+      "name": "materials renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "magazine renders at 390px",
+      "name": "materials-leathers renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "professionals renders at 390px",
+      "name": "magazine renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "sustainability renders at 390px",
+      "name": "professionals renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "contact renders at 390px",
+      "name": "sustainability renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "root URL serves the homepage",
+      "name": "contact renders directly from file at 390px",
       "result": "pass"
     },
     {
-      "name": "mobile drawer navigates to a page",
+      "name": "index has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "slideshow switches and pauses",
+      "name": "about has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "product filters, empty state and load more",
+      "name": "products has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "product preview and persistent wish list",
+      "name": "products-chairs has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "chairs pagination has distinct products and bounds",
+      "name": "materials has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "site search finds a product and handles no result",
+      "name": "materials-leathers has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "material preview and FAQ work",
+      "name": "magazine has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "leather swatch changes texture and caption",
+      "name": "professionals has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "magazine categories, keyboard tabs and article preview",
+      "name": "sustainability has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "professional resource downloads a real study file",
+      "name": "contact has static main content with JavaScript disabled",
       "result": "pass"
     },
     {
-      "name": "showroom search supports result and empty states",
+      "name": "manual slideshow supports previous, next and wraparound",
       "result": "pass"
     },
     {
-      "name": "contact validation and local demo result",
+      "name": "newsletter validates email and completes locally",
       "result": "pass"
     },
     {
-      "name": "newsletter shows local demo completion",
+      "name": "product category filter and linked table category work",
       "result": "pass"
     },
     {
-      "name": "tablet and narrow phone navigation fit",
+      "name": "chair pagination switches between two distinct groups of six",
+      "result": "pass"
+    },
+    {
+      "name": "native material FAQ opens and closes",
+      "result": "pass"
+    },
+    {
+      "name": "leather swatch changes the image, caption and selected color",
+      "result": "pass"
+    },
+    {
+      "name": "magazine topics and incoming category links filter articles",
+      "result": "pass"
+    },
+    {
+      "name": "showroom search finds London, handles no result and resets",
+      "result": "pass"
+    },
+    {
+      "name": "contact form uses native validation and a local demo result",
+      "result": "pass"
+    },
+    {
+      "name": "HTTP root and shared navigation serve the static pages",
+      "result": "pass"
+    },
+    {
+      "name": "professional guide downloads a nonempty local text file over HTTP",
       "result": "pass"
     }
   ],
