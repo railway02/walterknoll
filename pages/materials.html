@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent educational recreation of Walter Knoll — Material Library.">
-  <title>Material Library | Walter Knoll — Frontend Study</title>
+  <meta name="description" content="Walter Knoll furniture website study: Material Library.">
+  <title>Material Library | Walter Knoll Study</title>
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
@@ -14,83 +14,125 @@
 <body data-page="materials">
 <!-- shared:header:start -->
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
-  <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="menuDialog" aria-expanded="false" data-open="menuDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/></svg></button>
-  <a class="logo" href="../index.html" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25"></a>
+<header class="site-header">
+  <a href="../index.html" class="logo">
+    <img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25">
+  </a>
   <nav class="primary-nav" aria-label="Main navigation">
+    <a href="../index.html" data-nav="index">Home</a>
     <a href="../pages/products.html" data-nav="products">Products</a>
-    <a href="../pages/materials.html" data-nav="materials">Material Library</a>
+    <a href="../pages/materials.html" data-nav="materials">Materials</a>
     <a href="../pages/magazine.html" data-nav="magazine">Magazine</a>
-    <a href="../pages/about.html#designers" data-nav="designers">Designers</a>
     <a href="../pages/professionals.html" data-nav="professionals">Professionals</a>
     <a href="../pages/about.html" data-nav="about">About us</a>
     <a href="../pages/sustainability.html" data-nav="sustainability">Sustainability</a>
+    <a href="../pages/contact.html" data-nav="contact">Contact</a>
   </nav>
-  <div class="header-tools">
-    <button class="icon-button" type="button" aria-label="Search" data-open="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></button>
-    <button class="icon-button" type="button" aria-label="Wish list" data-open="wishlistDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg><span class="wish-count" hidden></span></button>
-    <a class="utility-link" href="../pages/contact.html#retailers">Retailers</a>
-    <a class="utility-link" href="../pages/professionals.html#downloads">Downloads</a>
-    <a class="utility-link" href="../pages/contact.html#contact">Contact</a>
-    <a class="icon-button mobile-contact" href="../pages/contact.html" aria-label="Retailers and contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
-    <span class="language" title="English">EN</span>
-  </div>
 </header>
-<dialog class="menu-dialog" id="menuDialog" aria-labelledby="menuTitle">
-  <div class="dialog-top"><span id="menuTitle">Explore Walter Knoll</span><button class="icon-button" type="button" aria-label="Close menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <nav class="drawer-nav" aria-label="Mobile navigation">
-    <a href="../pages/products.html">Products <span>→</span></a>
-    <a href="../pages/materials.html">Material Library <span>→</span></a>
-    <a href="../pages/magazine.html">Magazine <span>→</span></a>
-    <a href="../pages/about.html#designers">Designers <span>→</span></a>
-    <a href="../pages/professionals.html">Professionals <span>→</span></a>
-    <a href="../pages/about.html">About us <span>→</span></a>
-    <a href="../pages/sustainability.html">Sustainability <span>→</span></a>
-    <a href="../pages/contact.html#retailers">Retailers <span>→</span></a>
-    <a href="../pages/professionals.html#downloads">Downloads <span>→</span></a>
-    <a href="../pages/contact.html#contact">Contact <span>→</span></a>
-  </nav>
-</dialog>
-<dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-  <div class="dialog-top"><h2 id="searchTitle">Find your inspiration.</h2><button class="icon-button" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <label class="search-field"><span class="sr-only">Search products, materials and stories</span><input id="siteSearch" type="search" placeholder="Search products, materials and stories…" autocomplete="off"></label>
-  <p class="small muted" id="searchSummary" role="status">Explore the collection or enter a search term.</p>
-  <div id="searchResults" class="search-results"></div>
-</dialog>
-<dialog class="content-dialog" id="wishlistDialog" aria-labelledby="wishlistTitle">
-  <div class="dialog-top"><h2 id="wishlistTitle">Your wish list.</h2><button class="icon-button" type="button" aria-label="Close wish list" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <div id="wishlistContent"></div>
-</dialog>
-<dialog class="content-dialog" id="detailDialog" aria-labelledby="detailTitle"><button class="icon-button detail-close" type="button" aria-label="Close detail" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detailContent"></div></dialog>
 
 <!-- shared:header:end -->
-<main id="main">
-<section class="image-hero material-hero"><img class="" src="../assets/images/materials/inspiration.jpg" alt="A natural palette of fabric, wood and leather"><div class="hero-caption"><p class="eyebrow">Material Library</p><h1>Natural Elegance</h1><a class="arrow-link" href="#materials">Explore the material world <span aria-hidden="true">→</span></a></div></section><section class="container section material-intro" id="inspiration"><p class="eyebrow">Textures. Colors. Character.</p><h2>The material world</h2><p class="lead">A palette inspired by nature. Discover leather, fabric, wood and stone, and the character each material brings to a space.</p></section><section class="container section" id="materials"><div class="section-head"><h2>Our materials</h2></div><div class="three-column material-grid"><article class="material-card image-card" id="leathers" data-description="Discover the warmth, grain and evolving character of leather." data-source="https://www.walterknoll.info/en/materials/overview/leathers"><a class="material-open" href="materials-leathers.html"><span class="image-frame"><img class="" src="../assets/images/materials/leathers.jpg" alt="Leathers" loading="lazy"></span><h3>Leathers <span class="material-arrow" aria-hidden="true">→</span></h3></a><p>Discover the warmth, grain and evolving character of leather.</p></article><article class="material-card image-card" id="fabrics" data-description="Textures and colors that bring softness into a room." data-source="https://www.walterknoll.info/en/materials/overview/fabrics"><button class="material-open" type="button" data-material="Fabrics"><span class="image-frame"><img class="" src="../assets/images/materials/fabrics.jpg" alt="Fabrics" loading="lazy"></span><h3>Fabrics <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>Textures and colors that bring softness into a room.</p></article><article class="material-card image-card" id="graded-in-fabrics" data-description="Explore additional fabric choices for the collection." data-source="https://www.walterknoll.info/en/materials/overview/graded-in-fabrics"><button class="material-open" type="button" data-material="Graded-In fabrics"><span class="image-frame"><img class="" src="../assets/images/materials/fabrics.jpg" alt="Graded-In fabrics" loading="lazy"></span><h3>Graded-In fabrics <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>Explore additional fabric choices for the collection.</p></article><article class="material-card image-card" id="woods" data-description="Natural grain and a tactile surface, shaped by craftsmanship." data-source="https://www.walterknoll.info/en/materials/overview/woods"><button class="material-open" type="button" data-material="Woods"><span class="image-frame"><img class="" src="../assets/images/materials/woods.jpg" alt="Woods" loading="lazy"></span><h3>Woods <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>Natural grain and a tactile surface, shaped by craftsmanship.</p></article><article class="material-card image-card" id="stones" data-description="Distinct patterns in stone, marble and other mineral surfaces." data-source="https://www.walterknoll.info/en/materials/overview/stones"><button class="material-open" type="button" data-material="Stones"><span class="image-frame"><img class="" src="../assets/images/materials/stones.jpg" alt="Stones" loading="lazy"></span><h3>Stones <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>Distinct patterns in stone, marble and other mineral surfaces.</p></article><article class="material-card image-card" id="other-surfaces" data-description="Finishes in metal, glass and other surface materials." data-source="https://www.walterknoll.info/en/materials/overview/other-surfaces"><button class="material-open" type="button" data-material="Other surfaces"><span class="image-frame"><img class="" src="../assets/images/materials/other-surfaces.jpg" alt="Other surfaces" loading="lazy"></span><h3>Other surfaces <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>Finishes in metal, glass and other surface materials.</p></article><article class="material-card image-card" id="entry-inspiration" data-description="Explore combinations of natural colors and textures." data-source="https://www.walterknoll.info/en/materials/inspiration"><button class="material-open" type="button" data-material="Inspiration"><span class="image-frame"><img class="" src="../assets/images/materials/inspiration.jpg" alt="Inspiration" loading="lazy"></span><h3>Inspiration <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>Explore combinations of natural colors and textures.</p></article><article class="material-card image-card" id="materials-in-use" data-description="See materials in the context of living spaces." data-source="https://www.walterknoll.info/en/materials/materials-in-use"><button class="material-open" type="button" data-material="Materials in use"><span class="image-frame"><img class="" src="../assets/images/materials/materials-in-use.jpg" alt="Materials in use" loading="lazy"></span><h3>Materials in use <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>See materials in the context of living spaces.</p></article><article class="material-card image-card" id="entry-faq" data-description="Answers to questions about materials, care and samples." data-source="https://www.walterknoll.info/en/materials/faq"><button class="material-open" type="button" data-material="FAQ"><span class="image-frame"><img class="" src="../assets/images/materials/faq.jpg" alt="FAQ" loading="lazy"></span><h3>FAQ <span class="material-arrow" aria-hidden="true">→</span></h3></button><p>Answers to questions about materials, care and samples.</p></article></div></section><section class="container section material-faq" id="faq"><h2>Material questions</h2><details><summary>How do I choose a material?</summary><p>Compare the textures and colors here, then see the real samples at a showroom. Screen colors are a guide.</p></details><details><summary>Where can I find care information?</summary><p>Use the official material FAQ and care instructions for your specific product and finish.</p><a class="arrow-link" href="https://www.walterknoll.info/en/materials/faq">Official material FAQ <span aria-hidden="true">→</span></a></details><details><summary>Can I request a sample?</summary><p>Contact the official team or a retailer to discuss sample availability.</p><a class="arrow-link" href="contact.html">Find a showroom <span aria-hidden="true">→</span></a></details></section><section class="newsletter-strip container section"><h2>Stay inspired.</h2><p>New designs, remarkable spaces and stories from the world of Walter Knoll.</p><button class="button" type="button" data-open="newsletterDialog">Subscribe <span aria-hidden="true">→</span></button></section>
-</main>
+  <main id="main">
+    <section class="page-head" id="inspiration">
+      <p class="breadcrumbs"><a href="../index.html">Home</a> / Material Library</p>
+      <h1>Material Library</h1>
+      <p>Furniture uses many different materials. This page introduces nine material topics.</p>
+      <img class="material-intro-image" src="../assets/images/materials/inspiration.jpg" alt="Fabric, wood and leather samples">
+    </section>
+
+    <section class="section" id="materials">
+      <h2>Our materials</h2>
+      <div class="card-grid">
+        <article class="card material-card" id="leathers">
+          <img src="../assets/images/materials/leathers.jpg" alt="Leathers" loading="lazy">
+          <h3>Leathers</h3>
+          <p>Discover the warmth, grain and character of leather.</p>
+          <a href="materials-leathers.html">View leather colors</a>
+        </article>
+        <article class="card material-card" id="fabrics">
+          <img src="../assets/images/materials/fabrics.jpg" alt="Fabrics" loading="lazy">
+          <h3>Fabrics</h3>
+          <p>Textures and colors that bring softness into a room.</p>
+          <a href="https://www.walterknoll.info/en/materials/overview/fabrics">Read about fabrics</a>
+        </article>
+        <article class="card material-card" id="graded-in-fabrics">
+          <img src="../assets/images/materials/fabrics.jpg" alt="Graded-In fabrics" loading="lazy">
+          <h3>Graded-In fabrics</h3>
+          <p>Additional fabric choices for the collection.</p>
+          <a href="https://www.walterknoll.info/en/materials/overview/graded-in-fabrics">Read about graded-in fabrics</a>
+        </article>
+        <article class="card material-card" id="woods">
+          <img src="../assets/images/materials/woods.jpg" alt="Woods" loading="lazy">
+          <h3>Woods</h3>
+          <p>Natural grain and wood surfaces.</p>
+          <a href="https://www.walterknoll.info/en/materials/overview/woods">Read about woods</a>
+        </article>
+        <article class="card material-card" id="stones">
+          <img src="../assets/images/materials/stones.jpg" alt="Stones" loading="lazy">
+          <h3>Stones</h3>
+          <p>Patterns in stone and marble surfaces.</p>
+          <a href="https://www.walterknoll.info/en/materials/overview/stones">Read about stones</a>
+        </article>
+        <article class="card material-card" id="other-surfaces">
+          <img src="../assets/images/materials/other-surfaces.jpg" alt="Other surfaces" loading="lazy">
+          <h3>Other surfaces</h3>
+          <p>Finishes in metal, glass and other materials.</p>
+          <a href="https://www.walterknoll.info/en/materials/overview/other-surfaces">Read about other surfaces</a>
+        </article>
+        <article class="card material-card" id="entry-inspiration">
+          <img src="../assets/images/materials/inspiration.jpg" alt="Inspiration" loading="lazy">
+          <h3>Inspiration</h3>
+          <p>Combinations of natural colors and textures.</p>
+          <a href="https://www.walterknoll.info/en/materials/inspiration">Find inspiration</a>
+        </article>
+        <article class="card material-card" id="materials-in-use">
+          <img src="../assets/images/materials/materials-in-use.jpg" alt="Materials in use" loading="lazy">
+          <h3>Materials in use</h3>
+          <p>Materials shown in living spaces.</p>
+          <a href="https://www.walterknoll.info/en/materials/materials-in-use">View materials in use</a>
+        </article>
+        <article class="card material-card" id="entry-faq">
+          <img src="../assets/images/materials/faq.jpg" alt="FAQ" loading="lazy">
+          <h3>FAQ</h3>
+          <p>Questions about materials, care and samples.</p>
+          <a href="#faq">Go to the questions below</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>Material questions</h2>
+      <details>
+        <summary>How do I choose a material?</summary>
+        <p>Compare the pictures here, then see real samples at a showroom. Screen colors are only a guide.</p>
+      </details>
+      <details>
+        <summary>Where can I find care information?</summary>
+        <p>Use the official care instructions for your product and finish.</p>
+        <p><a href="https://www.walterknoll.info/en/materials/faq">Official material FAQ</a></p>
+      </details>
+      <details>
+        <summary>Can I request a sample?</summary>
+        <p>Contact a retailer or the official team to ask about sample availability.</p>
+        <p><a href="contact.html#retailers">Find a showroom</a></p>
+      </details>
+    </section>
+  </main>
 <!-- shared:footer:start -->
 <footer class="site-footer">
-  <div class="container">
-    <a href="../index.html" class="footer-logo" aria-label="Walter Knoll — Home"><img src="../assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25" loading="lazy"></a>
-    <div class="footer-grid">
-      <div><h3>Products</h3><ul><li><a href="../pages/products-chairs.html">Chairs &amp; Barstools</a></li><li><a href="../pages/products.html?category=lounge-chairs">Lounge Chairs</a></li><li><a href="../pages/products.html?category=sofas-benches">Sofas &amp; Benches</a></li><li><a href="../pages/products.html?category=tables">Tables</a></li><li><a href="../pages/products.html?category=executive-desks">Executive Desks</a></li><li><a href="../pages/products.html">All Products</a></li></ul></div>
-      <div><h3>Material Library</h3><ul><li><a href="../pages/materials.html#inspiration">Inspiration</a></li><li><a href="../pages/materials-leathers.html">Leathers</a></li><li><a href="../pages/materials.html#fabrics">Fabrics</a></li><li><a href="../pages/materials.html#woods">Woods</a></li><li><a href="../pages/materials.html#stones">Stones</a></li><li><a href="../pages/materials.html#faq">FAQ</a></li></ul></div>
-      <div><h3>About us</h3><ul><li><a href="../pages/about.html#purpose">Our Purpose</a></li><li><a href="../pages/about.html#history">Our History</a></li><li><a href="../pages/about.html#designers">Our Designers</a></li><li><a href="../pages/contact.html#retailers">Showrooms</a></li><li><a href="../pages/sustainability.html">Sustainability</a></li></ul></div>
-      <div><h3>Professionals</h3><ul><li><a href="../pages/professionals.html#downloads">Downloads</a></li><li><a href="../pages/magazine.html?category=References">Projects</a></li><li><a href="../pages/professionals.html#campus">Campus of Competence</a></li><li><a href="../pages/professionals.html#tools">pCon Tools</a></li><li><a href="../pages/contact.html#contact">Contact</a></li></ul></div>
-      <div><h3>Magazine</h3><ul><li><a href="../pages/magazine.html">All Topics</a></li><li><a href="../pages/magazine.html?category=News">News</a></li><li><a href="../pages/magazine.html?category=Stories">Stories</a></li><li><a href="../pages/magazine.html?category=References">References</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>© Walter Knoll · Frontend study</p><p>Independent educational recreation. Images and brand belong to Walter Knoll.</p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Visit the original ↗</a><button class="text-button" type="button" data-top>Back to top ↑</button></div>
-  </div>
+  <p>Walter Knoll · Frontend study</p>
+  <p>
+    <a href="../pages/products-chairs.html">Chairs &amp; Barstools</a> |
+    <a href="../pages/materials-leathers.html">Leathers</a> |
+    <a href="../pages/about.html#designers">Designers</a> |
+    <a href="../pages/contact.html#retailers">Showrooms</a> |
+    <a href="../pages/professionals.html#downloads">Downloads</a>
+  </p>
+  <p class="muted">Educational practice. Images and brand belong to Walter Knoll.</p>
+  <p><a href="https://www.walterknoll.info/en" target="_blank" rel="noopener">Original website</a></p>
+  <button type="button" id="backToTop">Back to top</button>
 </footer>
-<dialog class="content-dialog newsletter-dialog" id="newsletterDialog" aria-labelledby="newsletterTitle">
-  <div class="dialog-top"><h2 id="newsletterTitle">Stay inspired.</h2><button class="icon-button" type="button" aria-label="Close newsletter" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <p>Discover design, materials and new perspectives.</p>
-  <form id="newsletterForm"><label>Email address<input type="email" name="email" autocomplete="email" required placeholder="Your email address"></label><label class="checkbox-field"><input type="checkbox" required> I understand this is a local demonstration.</label><button class="button" type="submit">Subscribe <span>→</span></button><p class="form-status" role="status"></p></form>
-  <p class="small muted">Study demo: your address is not sent or saved. Visit the original website for the official newsletter.</p>
-</dialog>
-<div class="toast" role="status" hidden></div>
 
 <!-- shared:footer:end -->
-<script type="module" src="../js/common.js"></script>
-<script type="module" src="../js/pages/materials.js"></script>
+  <script src="../js/common.js" defer></script>
 </body>
 </html>

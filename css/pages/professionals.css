@@ -1,3 +1,8 @@
-/* D: services, downloadable study documents and official resource links. */
-.professional-hero{margin-top:0}.professional-hero img{aspect-ratio:2.8;object-fit:cover}.service-card{border-top:1px solid var(--line);padding:28px 0;position:relative}.service-card>svg{width:32px;height:32px;margin-bottom:24px}.service-card h3{font-size:25px;letter-spacing:-.03em}.service-card p{margin-top:16px;font-size:14px;color:var(--muted);max-width:230px}.service-card>span{display:block;margin-top:24px;font-size:23px}.service-card:hover>span{transform:translateX(5px)}.professional-notes>article{padding-top:32px;border-top:1px solid var(--line)}.professional-notes h2{font-size:38px}
-@media(max-width:599px){.professional-hero img{aspect-ratio:1.5}.service-card h3{font-size:23px}.service-card p{font-size:13px}.service-card{padding-top:24px}.service-grid{gap:30px 24px}}
+.professional-image {
+  width: 100%;
+  max-width: 600px;
+}
+
+.service-list li {
+  margin-bottom: 12px;
+}

@@ -1,8 +1,21 @@
-const buttons=[...document.querySelectorAll('[data-swatch]')];
-function select(button){
-  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-  const image=document.querySelector('#leatherPreview');image.src=button.querySelector('img').src;image.alt=`Elen leather — ${button.dataset.swatch}`;
-  document.querySelector('#selectedColor').textContent=button.dataset.swatch;
-  document.querySelector('#colorCaption').textContent=`Elen · ${button.dataset.swatch}`;
+const leatherSwatches = document.querySelectorAll('[data-swatch]');
+
+for (let i = 0; i < leatherSwatches.length; i++) {
+  leatherSwatches[i].addEventListener('click', function () {
+    const colorName = this.getAttribute('data-swatch');
+    const colorImage = this.querySelector('img');
+    const previewImage = document.querySelector('#leatherPreview');
+
+    previewImage.src = colorImage.src;
+    previewImage.alt = 'Elen leather: ' + colorName;
+    document.querySelector('#leatherTitle').textContent = 'Elen: ' + colorName;
+    document.querySelector('#selectedColor').textContent = colorName;
+    document.querySelector('#colorCaption').textContent = 'Elen: ' + colorName;
+
+    for (let j = 0; j < leatherSwatches.length; j++) {
+      leatherSwatches[j].setAttribute('aria-pressed', 'false');
+    }
+
+    this.setAttribute('aria-pressed', 'true');
+  });
 }
-buttons.forEach(button=>button.addEventListener('click',()=>select(button)));

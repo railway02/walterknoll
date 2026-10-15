@@ -1,49 +1,16 @@
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="siteHeader">
-  <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="menuDialog" aria-expanded="false" data-open="menuDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/></svg></button>
-  <a class="logo" href="{{root}}index.html" aria-label="Walter Knoll — Home"><img src="{{root}}assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25"></a>
+<header class="site-header">
+  <a href="{{root}}index.html" class="logo">
+    <img src="{{root}}assets/images/common/logo-black.svg" alt="Walter Knoll" width="154" height="25">
+  </a>
   <nav class="primary-nav" aria-label="Main navigation">
+    <a href="{{root}}index.html" data-nav="index">Home</a>
     <a href="{{root}}pages/products.html" data-nav="products">Products</a>
-    <a href="{{root}}pages/materials.html" data-nav="materials">Material Library</a>
+    <a href="{{root}}pages/materials.html" data-nav="materials">Materials</a>
     <a href="{{root}}pages/magazine.html" data-nav="magazine">Magazine</a>
-    <a href="{{root}}pages/about.html#designers" data-nav="designers">Designers</a>
     <a href="{{root}}pages/professionals.html" data-nav="professionals">Professionals</a>
     <a href="{{root}}pages/about.html" data-nav="about">About us</a>
     <a href="{{root}}pages/sustainability.html" data-nav="sustainability">Sustainability</a>
+    <a href="{{root}}pages/contact.html" data-nav="contact">Contact</a>
   </nav>
-  <div class="header-tools">
-    <button class="icon-button" type="button" aria-label="Search" data-open="searchDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg></button>
-    <button class="icon-button" type="button" aria-label="Wish list" data-open="wishlistDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg><span class="wish-count" hidden></span></button>
-    <a class="utility-link" href="{{root}}pages/contact.html#retailers">Retailers</a>
-    <a class="utility-link" href="{{root}}pages/professionals.html#downloads">Downloads</a>
-    <a class="utility-link" href="{{root}}pages/contact.html#contact">Contact</a>
-    <a class="icon-button mobile-contact" href="{{root}}pages/contact.html" aria-label="Retailers and contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
-    <span class="language" title="English">EN</span>
-  </div>
 </header>
-<dialog class="menu-dialog" id="menuDialog" aria-labelledby="menuTitle">
-  <div class="dialog-top"><span id="menuTitle">Explore Walter Knoll</span><button class="icon-button" type="button" aria-label="Close menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <nav class="drawer-nav" aria-label="Mobile navigation">
-    <a href="{{root}}pages/products.html">Products <span>→</span></a>
-    <a href="{{root}}pages/materials.html">Material Library <span>→</span></a>
-    <a href="{{root}}pages/magazine.html">Magazine <span>→</span></a>
-    <a href="{{root}}pages/about.html#designers">Designers <span>→</span></a>
-    <a href="{{root}}pages/professionals.html">Professionals <span>→</span></a>
-    <a href="{{root}}pages/about.html">About us <span>→</span></a>
-    <a href="{{root}}pages/sustainability.html">Sustainability <span>→</span></a>
-    <a href="{{root}}pages/contact.html#retailers">Retailers <span>→</span></a>
-    <a href="{{root}}pages/professionals.html#downloads">Downloads <span>→</span></a>
-    <a href="{{root}}pages/contact.html#contact">Contact <span>→</span></a>
-  </nav>
-</dialog>
-<dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-  <div class="dialog-top"><h2 id="searchTitle">Find your inspiration.</h2><button class="icon-button" type="button" aria-label="Close search" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <label class="search-field"><span class="sr-only">Search products, materials and stories</span><input id="siteSearch" type="search" placeholder="Search products, materials and stories…" autocomplete="off"></label>
-  <p class="small muted" id="searchSummary" role="status">Explore the collection or enter a search term.</p>
-  <div id="searchResults" class="search-results"></div>
-</dialog>
-<dialog class="content-dialog" id="wishlistDialog" aria-labelledby="wishlistTitle">
-  <div class="dialog-top"><h2 id="wishlistTitle">Your wish list.</h2><button class="icon-button" type="button" aria-label="Close wish list" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
-  <div id="wishlistContent"></div>
-</dialog>
-<dialog class="content-dialog" id="detailDialog" aria-labelledby="detailTitle"><button class="icon-button detail-close" type="button" aria-label="Close detail" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detailContent"></div></dialog>

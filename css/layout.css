@@ -1,7 +1,74 @@
-/* Shared layout: navigation, grids, page spacing and footer. */
-.container{width:calc(100% - var(--gutter)*2);margin-inline:auto}.site-header{height:var(--header-height);position:fixed;top:0;left:0;right:0;z-index:30;background:var(--paper);display:flex;align-items:stretch;border-bottom:1px solid var(--line)}.logo{width:222px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--line);flex-shrink:0}.logo img{width:154px}.primary-nav{display:flex;align-items:stretch;white-space:nowrap}.primary-nav>a{display:flex;align-items:center;padding:0 16px;border-right:1px solid var(--line);font-size:14px;position:relative;color:var(--black)}.primary-nav>a:hover,.primary-nav>a[aria-current=page]{background:var(--soft)}.primary-nav>a[aria-current=page]::after{content:'';height:2px;background:var(--ink);position:absolute;bottom:0;left:16px;right:16px}.header-tools{margin-left:auto;padding:0 44px 0 18px;display:flex;gap:12px;align-items:center;color:var(--black)}.utility-link,.language{font-size:12px;white-space:nowrap}.utility-link:hover{text-decoration:underline}.language{margin-left:2px}.menu-toggle,.mobile-contact{display:none!important}main{padding-top:var(--header-height);min-height:60vh}.page-head{padding-top:34px;padding-bottom:42px}.page-head h1{margin-top:85px}.page-head .lead{margin-top:38px}.section{margin-block:var(--section-space)}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:38px}.two-column{display:grid;grid-template-columns:1fr 1fr;gap:40px}.three-column{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}.four-column{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}.split-section{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}.split-section img{aspect-ratio:3/2;object-fit:cover}.split-section.reverse .split-image{order:2}.split-section .eyebrow{margin-bottom:22px}.split-section h2{font-size:42px}.split-section .body-copy{margin-top:24px}.split-section .arrow-link{margin-top:28px}.site-footer{margin-top:100px;padding:64px 0 28px;background:var(--soft);border-top:1px solid var(--line)}.footer-logo{display:block;width:184px;margin-bottom:54px}.footer-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:30px}.footer-grid h3{font:600 15px var(--sans);letter-spacing:0;margin-bottom:18px}.footer-grid li{font-size:14px;margin-bottom:8px}.footer-grid a:hover{text-decoration:underline}.footer-bottom{display:flex;flex-wrap:wrap;gap:16px 32px;margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);align-items:center}.footer-bottom p+p{margin-top:0}.footer-bottom .text-button{margin-left:auto}.subnav{display:flex;gap:28px;border-bottom:1px solid var(--line);padding:20px 0;margin-bottom:60px;flex-wrap:wrap;font-size:14px}.subnav a:hover{text-decoration:underline}.newsletter-strip{display:grid;grid-template-columns:1fr 1.2fr auto;gap:50px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:52px 0}.newsletter-strip h2{font-size:38px}.newsletter-strip p{max-width:430px}.newsletter-strip+.site-footer{margin-top:0}
-@media(max-width:1390px){.primary-nav>a{padding-inline:11px;font-size:13px}.header-tools{padding-right:24px;gap:10px}.logo{width:200px}.logo img{width:148px}}@media(max-width:1199px){.primary-nav{display:none}.menu-toggle{display:flex!important;width:64px;border-right:1px solid var(--line)}.logo{width:210px;justify-content:flex-start;padding-left:28px}.header-tools{padding-right:var(--gutter);gap:16px}}@media(max-width:859px){.menu-toggle{width:54px}.logo{width:174px;padding-left:24px}.logo img{width:125px}.header-tools{padding:0 14px;gap:12px}.utility-link,.language{display:none}.mobile-contact{display:flex!important}.two-column,.split-section{gap:32px}.three-column{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.four-column{grid-template-columns:repeat(2,minmax(0,1fr))}.page-head h1{margin-top:50px}.page-head .lead{margin-top:28px}.split-section h2{font-size:34px}.newsletter-strip{grid-template-columns:1fr;gap:24px;padding:36px 0}.newsletter-strip .button{justify-self:start}.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:36px}.footer-bottom .text-button{margin-left:0}}@media(max-width:599px){.two-column,.three-column,.split-section{grid-template-columns:1fr}.split-section.reverse .split-image{order:0}.section-head{align-items:flex-start;gap:20px}.section-head .arrow-link{font-size:13px;white-space:nowrap}.page-head{padding-bottom:30px}.page-head h1{margin-top:42px}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-footer{margin-top:64px;padding-top:44px}.footer-bottom{display:block}.footer-bottom>*{margin-bottom:14px}.footer-logo{margin-bottom:36px}.subnav{gap:14px 22px;margin-bottom:38px}.four-column{gap:18px}}
-/* Keep the menu cell width independent of reusable icon button sizing. */
-.site-header .menu-toggle{width:64px}
-@media(max-width:859px){.site-header .menu-toggle{width:54px}}
-@media(max-width:359px){.logo{width:154px;padding-left:16px}.header-tools{padding-inline:8px;gap:8px}}
+/* The same header, content width and footer on every page. */
+.site-header, main, .site-footer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+}
+
+.site-header {
+  border-bottom: 2px solid #999999;
+}
+
+.logo {
+  display: inline-block;
+  margin: 8px 0 16px;
+}
+
+.primary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.primary-nav a[aria-current="page"] {
+  color: #333333;
+  font-weight: bold;
+}
+
+main {
+  min-height: 500px;
+}
+
+.page-head {
+  margin-bottom: 25px;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+}
+
+.section {
+  margin: 30px 0;
+  padding-top: 10px;
+  border-top: 1px solid #dddddd;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.site-footer {
+  border-top: 2px solid #999999;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 650px) {
+  .site-header, main, .site-footer {
+    padding: 15px;
+  }
+
+  .card-grid, .two-column {
+    grid-template-columns: 1fr;
+  }
+}

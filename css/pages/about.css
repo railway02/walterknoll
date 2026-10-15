@@ -1,3 +1,9 @@
-/* A: history and designers. */
-.history-layout{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}.history-layout>img{aspect-ratio:3/4;object-fit:cover;position:sticky;top:95px}.timeline{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}.timeline li{display:grid;grid-template-columns:105px 1fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--line)}.timeline-year{font:34px/1.2 var(--serif);letter-spacing:-.04em}.timeline h3{font-size:27px}.timeline p{font-size:15px;margin-top:14px}#designers .image-frame img{aspect-ratio:3/2;object-fit:cover}
-@media(max-width:859px){.history-layout{gap:32px}.timeline li{grid-template-columns:1fr;gap:12px}}@media(max-width:599px){.history-layout{grid-template-columns:1fr}.history-layout>img{position:static;aspect-ratio:3/2}.timeline li{grid-template-columns:84px 1fr;gap:18px}.timeline-year{font-size:29px}.timeline h3{font-size:25px}}
+/* A: brand introduction and history. */
+.about-photo {
+  width: 100%;
+  max-width: 600px;
+}
+
+.history-list li {
+  margin: 12px 0;
+}
